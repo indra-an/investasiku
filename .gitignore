@@ -12,6 +12,7 @@ rerun.txt
 pickle-email-*.html
 config/secrets.yml
 config/application.yml
+config/database.yml
 /.bundle
 /vendor/bundle
 Gemfile.lock
@@ -20,3 +21,6 @@ Gemfile.lock
 .rvmrc
 .byebug_history
 .DS_Store
+/config/database.production.yml
+/config/secrets.production.yml
+/config/application.production.yml
