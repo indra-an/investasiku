@@ -8,6 +8,7 @@ gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'figaro'
+gem 'pg'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -28,10 +29,6 @@ group :development do
   gem 'capistrano-rails-console'
   gem 'capistrano-upload-config'
   gem 'sshkit-sudo'
-end
-
-group :production do
-  gem 'pg'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
