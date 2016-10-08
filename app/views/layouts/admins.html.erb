@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+
+    <title>Investasiku Dashboard</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <%= stylesheet_link_tag 'admins', :media => 'all', 'data-turbolinks-track' => 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to admins_dashboard_path, :class => 'navbar-brand' do %>
+            <span>Investasiku</span>Admin
+          <% end %>
+          <ul class="user-menu">
+            <li class="dropdown pull-right">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg>
+                <span id="admin-full-name"><%= current_admin.full_name %></span>&nbsp;<span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                  <%= link_to '#', :data => { :toggle => 'modal', :target => '#account-settings-dialog' } do %>
+                    <svg class="glyph stroked gear"><use xlink:href="#stroked-gear"></use></svg>&nbsp;Settings
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to destroy_admin_session_path, :method => :delete do %>
+                    <svg class="glyph stroked cancel"><use xlink:href="#stroked-cancel"></use></svg>&nbsp;Logout
+                  <% end %>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+      <form role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+      </form>
+      <ul class="nav menu">
+        <li class="active"><a href="index.html"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
+        <li><a href="widgets.html"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Widgets</a></li>
+        <li><a href="charts.html"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Charts</a></li>
+        <li><a href="tables.html"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Tables</a></li>
+        <li><a href="forms.html"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> Forms</a></li>
+        <li><a href="panels.html"><svg class="glyph stroked app-window"><use xlink:href="#stroked-app-window"></use></svg> Alerts &amp; Panels</a></li>
+        <li><a href="icons.html"><svg class="glyph stroked star"><use xlink:href="#stroked-star"></use></svg> Icons</a></li>
+        <li role="presentation" class="divider"></li>
+        <li>
+          <%= link_to '#' do %>
+            <svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Admin Accounts
+          <% end %>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="account-settings-dialog" tabindex="-1" role="dialog" aria-labelledby="account-settings-label">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="account-settings-label">Account settings</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <%= form_tag admins_update_full_name_path, :class => 'form-inline', :method => :put, :remote => true do %>
+                <%= text_field_tag :full_name, current_admin.full_name, :class => 'form-control', :maxlength => 25, :placeholder => 'Full Name' %>
+                <%= submit_tag 'Update', :class => 'btn btn-primary' %>
+                <span id="full-name-update-status"></span>
+              <% end %>
+            </div>
+
+            <div class="form-group">
+              <%= form_tag admins_update_password_path, :class => 'form-inline', :method => :put, :remote => true do %>
+                <%= password_field_tag :new_password, '', :class => 'form-control', :maxlength => 16, :placeholder => 'New Password' %>
+                <%= password_field_tag :retype_new_password, '', :class => 'form-control', :maxlength => 16, :placeholder => 'Retype New Password' %>
+                <%= submit_tag 'Update', :class => 'btn btn-primary' %>
+                <span id="password-update-status"></span>
+              <% end %>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <%= javascript_include_tag 'admins', 'data-turbolinks-track' => 'reload' %>
+  </body>
+</html>

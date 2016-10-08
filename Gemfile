@@ -9,13 +9,13 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'figaro'
 gem 'pg'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug', platform: :mri
 end
 
 group :development do
-  gem 'sqlite3'
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
   gem 'spring'

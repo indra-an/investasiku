@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Investasiku Admin</title>
@@ -12,6 +11,7 @@
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Varela+Round' type='text/css'>
     <%= stylesheet_link_tag 'devise', :media => 'all', 'data-turbolinks-track' => 'reload' %>
   </head>
+
   <body>
     <% if flash[:alert].present? %>
       <div class="alert alert-danger" role="alert"><strong>Sorry!</strong>&nbsp;<%= flash[:alert] %></div>
