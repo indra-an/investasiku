@@ -9,7 +9,7 @@ module AdminsHelper
     if name.nil? && url.nil? && html_options.empty? && block.nil?
       content_tag :li do
         link_to admins_dashboard_path do
-          raw '<svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg>'
+          raw '<span class="glyphicon glyphicon-home"></span>'
         end
       end
     else
@@ -22,5 +22,14 @@ module AdminsHelper
         end
       end
     end
+  end
+
+  def class_for_sidebar(menu)
+    route = case menu
+    when :admins; admins_admins_path
+    else admins_dashboard_path
+    end
+
+    current_page?(route) ? 'active' : ''
   end
 end
