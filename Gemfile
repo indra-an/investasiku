@@ -11,6 +11,11 @@ gem 'figaro'
 gem 'pg'
 gem 'devise'
 gem 'chartkick'
+gem 'usagewatch'
+gem 'ckeditor'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'ahoy_matey'
 
 group :development, :test do
   gem 'byebug', platform: :mri

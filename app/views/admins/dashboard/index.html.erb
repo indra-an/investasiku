@@ -70,32 +70,19 @@
     <div class="panel panel-default">
       <div class="panel-heading"><span class="glyphicon glyphicon-envelope"></span>&nbsp;Broadcast Newsletter</div>
       <div class="panel-body">
-        <form class="form-horizontal" action="" method="post">
+        <%= form_tag admins_queue_newsletter_path do %>
           <fieldset>
-            <!-- Name input-->
             <div class="form-group">
-              <label class="col-md-3 control-label" for="name">Name</label>
-              <div class="col-md-9">
-              <input id="name" name="name" type="text" placeholder="Your name" class="form-control">
-              </div>
+              <%= label_tag :subject, 'Subject', :class => 'control-label' %>
+              <%= text_field_tag :subject, '', :class => 'form-control', :placeholder => 'Subject' %>
             </div>
-
-            <!-- Message body -->
             <div class="form-group">
-              <label class="col-md-3 control-label" for="message">Your message</label>
-              <div class="col-md-9">
-                <textarea class="form-control" id="message" name="message" placeholder="Please enter your message here..." rows="5"></textarea>
-              </div>
+              <%= label_tag :newsletter, 'Content', :class => 'control-label' %>
+              <%= cktext_area :newsletter, :content %>
             </div>
-
-            <!-- Form actions -->
-            <div class="form-group">
-              <div class="col-md-12 widget-right">
-                <button type="submit" class="btn btn-default btn-md pull-right">Queue</button>
-              </div>
-            </div>
+            <button type="submit" class="btn btn-success btn-md pull-right">Queue Newsletter</button>
           </fieldset>
-        </form>
+        <% end %>
       </div>
     </div>
   </div>
@@ -106,23 +93,23 @@
         <div class="panel panel-default">
           <div class="panel-body easypiechart-panel">
             <h4>Login Times</h4>
-            <div class="easypiechart" id="easypiechart-blue"><span class="percent">114</span></div>
+            <div class="easypiechart" id="easypiechart-blue"><span class="percent"><%= @login_times %></span></div>
           </div>
         </div>
       </div>
       <div class="col-xs-12 col-md-6">
         <div class="panel panel-default">
           <div class="panel-body easypiechart-panel">
-            <h4>Subscribers</h4>
-            <div class="easypiechart" id="easypiechart-orange"><span class="percent">36</span></div>
+            <h4>Server CPU</h4>
+            <div class="easypiechart" id="easypiechart-orange"><span class="percent"><%= @server_cpu.nil? ? 'N/A' : @server_cpu + '%' %></span></div>
           </div>
         </div>
       </div>
       <div class="col-xs-12 col-md-6">
         <div class="panel panel-default">
           <div class="panel-body easypiechart-panel">
-            <h4>Server Usage</h4>
-            <div class="easypiechart" id="easypiechart-teal"><span class="percent">5%</span></div>
+            <h4>Server Memory</h4>
+            <div class="easypiechart" id="easypiechart-teal"><span class="percent"><%= @server_memory.nil? ? 'N/A' : @server_memory + '%' %></span></div>
           </div>
         </div>
       </div>
@@ -130,7 +117,7 @@
         <div class="panel panel-default">
           <div class="panel-body easypiechart-panel">
             <h4>Server Storage</h4>
-            <div class="easypiechart" id="easypiechart-red"><span class="percent">18%</span></div>
+            <div class="easypiechart" id="easypiechart-red"><span class="percent"><%= @server_storage.nil? ? 'N/A' : @server_storage + '%' %></span></div>
           </div>
         </div>
       </div>

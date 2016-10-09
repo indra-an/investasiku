@@ -1,5 +1,12 @@
 class Admins::DashboardController < Admins::BaseController
   def index
+    @login_times = current_admin.sign_in_count
+    @server_cpu = Usagewatch.uw_cpuused rescue nil
+    @server_memory = Usagewatch.uw_memused rescue nil
+    @server_storage = Usagewatch.uw_diskused_perc rescue nil
+  end
+
+  def queue_newsletter
   end
 
   def update_full_name
