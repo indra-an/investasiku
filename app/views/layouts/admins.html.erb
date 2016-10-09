@@ -64,11 +64,15 @@
         <li><a href="icons.html"><svg class="glyph stroked star"><use xlink:href="#stroked-star"></use></svg> Icons</a></li>
         <li role="presentation" class="divider"></li>
         <li>
-          <%= link_to '#' do %>
+          <%= link_to admins_admins_path do %>
             <svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Admin Accounts
           <% end %>
         </li>
       </ul>
+    </div>
+
+    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+      <%= yield %>
     </div>
 
     <!-- Modal -->

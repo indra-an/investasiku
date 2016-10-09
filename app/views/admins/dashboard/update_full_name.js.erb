@@ -1,0 +1,14 @@
+<%
+  status_text = @status ? 'Saved!' : @error_message
+  status_class = @status ? 'text-success' : 'text-danger'
+%>
+
+var $holder = $("#full-name-update-status");
+$holder.removeClass("text-success");
+$holder.removeClass("text-danger");
+$holder.addClass("<%= j status_class %>");
+$holder.html("<%= j status_text %>");
+
+<% if @status %>
+  $("#admin-full-name").html("<%= j current_admin.full_name %>");
+<% end %>
