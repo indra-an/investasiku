@@ -10,6 +10,7 @@ gem 'turbolinks', '~> 5'
 gem 'figaro'
 gem 'pg'
 gem 'devise'
+gem 'chartkick'
 
 group :development, :test do
   gem 'byebug', platform: :mri

@@ -72,6 +72,7 @@ GEM
     capistrano3-puma (1.2.1)
       capistrano (~> 3.0)
       puma (>= 2.6)
+    chartkick (2.1.1)
     concurrent-ruby (1.0.2)
     debug_inspector (0.0.2)
     devise (4.2.0)
@@ -211,6 +212,7 @@ DEPENDENCIES
   capistrano-rvm
   capistrano-upload-config
   capistrano3-puma
+  chartkick
   devise
   figaro
   jquery-rails
