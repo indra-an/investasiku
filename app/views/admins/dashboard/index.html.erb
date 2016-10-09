@@ -16,7 +16,6 @@
       <div class="row no-padding">
         <div class="col-sm-3 col-lg-5 widget-left">
           <div class="large-2"><span class="glyphicon glyphicon-equalizer"></span></div>
-          <svg class="glyph stroked bag"><use xlink:href="#stroked-bag"></use></svg>
         </div>
         <div class="col-sm-9 col-lg-7 widget-right">
           <div class="large">120</div>
@@ -59,7 +58,7 @@
       <div class="panel-heading"><span class="glyphicon glyphicon-signal"></span>&nbsp;Site Traffic Overview</div>
       <div class="panel-body">
         <div class="canvas-wrapper">
-          <canvas class="main-chart" id="line-chart" height="200" width="600"></canvas>
+          <%= column_chart({ "Football" => 10, "Basketball" => 5 }) %>
         </div>
       </div>
     </div>
