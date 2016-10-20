@@ -65,9 +65,14 @@
             <span class="glyphicon glyphicon-dashboard"></span>&nbsp;Dashboard
           <% end %>
         </li>
+        <li class="<%= class_for_sidebar(:glosarries) %>">
+          <%= link_to admins_glosarries_path do %>
+            <span class="glyphicon glyphicon-book"></span>&nbsp;Glosarries
+          <% end %>
+        </li>
         <li class="<%= class_for_sidebar(:tags) %>">
           <%= link_to admins_tags_path do %>
-            <span class="glyphicon glyphicon-tag"></span>&nbsp;Tags
+            <span class="glyphicon glyphicon-tags"></span>&nbsp;Tags
           <% end %>
         </li>
         <li role="presentation" class="divider"></li>

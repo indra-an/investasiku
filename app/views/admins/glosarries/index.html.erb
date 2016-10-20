@@ -1,0 +1,51 @@
+<div class="row">
+  <%= breadcrumb do %>
+    <%= breadcrumb_item %>
+    <%= breadcrumb_item 'Glossaries' %>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">Glossary Management</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <table class="table table-striped table-hover">
+          <%= link_to new_admins_glosarry_path, :class => 'btn btn-success pull-right' do %>
+            <span class="glyphicon glyphicon-plus"></span>&nbsp;New Glosarry
+          <% end %>
+          <thead>
+            <th>Title</th>
+            <th>Control</th>
+          </thead>
+
+          <tbody>
+            <tbody>
+              <% if @glosarries.empty? %>
+                <tr>
+                  <td colspan="2">You have no glosarries. <%= link_to 'Create one!', new_admins_glosarry_path %>.</td>
+                </tr>
+              <% else %>
+                <% @glosarries.each do |glosarry| %>
+                  <tr>
+                    <td><%= glosarry.title %></td>
+                    <td>
+                      <%= link_to 'Preview', admins_glosarry_path(glosarry) %>&nbsp;|
+                      <%= link_to 'Edit', edit_admins_glosarry_path(glosarry) %>&nbsp;|
+                      <%= link_to 'Destroy', admins_glosarry_path(glosarry), :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+                    </td>
+                  </tr>
+                <% end %>
+              <% end %>
+            </tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

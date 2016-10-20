@@ -1,0 +1,15 @@
+<div class="row">
+  <%= breadcrumb do %>
+    <%= breadcrumb_item %>
+    <%= breadcrumb_item 'Glosarries', admins_glosarries_path %>
+    <%= breadcrumb_item 'Edit Glosarry' %>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">Edit <%= @glosarry.title.titleize %> Glosarry</h1>
+  </div>
+</div>
+
+<%= render 'form', glosarry: @glosarry %>

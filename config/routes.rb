@@ -13,5 +13,6 @@ Rails.application.routes.draw do
 
     resources :admins, :except => [:show, :edit]
     resources :tags, :except => [:show]
+    resources :glosarries
   end
 end
