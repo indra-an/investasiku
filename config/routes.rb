@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     post 'queue_newsletter' => 'dashboard#queue_newsletter'
 
     resources :admins, :except => [:show, :edit]
+    resources :tags, :except => [:show]
   end
 end
