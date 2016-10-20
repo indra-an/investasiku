@@ -25,11 +25,6 @@ module AdminsHelper
   end
 
   def class_for_sidebar(menu)
-    route = case menu
-    when :admins; admins_admins_path
-    else admins_dashboard_path
-    end
-
-    current_page?(route) ? 'active' : ''
+    controller.controller_name.eql?(menu.to_s) ? 'active' : ''
   end
 end
