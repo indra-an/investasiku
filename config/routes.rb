@@ -15,5 +15,6 @@ Rails.application.routes.draw do
     resources :tags, :except => [:show]
     resources :glosarries
     resources :news
+    resources :newsletter_queues
   end
 end

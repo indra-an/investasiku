@@ -1,0 +1,15 @@
+<div class="row">
+  <%= breadcrumb do %>
+    <%= breadcrumb_item %>
+    <%= breadcrumb_item 'Newsletter Queue', admins_newsletter_queues_path %>
+    <%= breadcrumb_item 'Add Queue' %>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">Add Queue</h1>
+  </div>
+</div>
+
+<%= render 'form', newsletter_queue: @newsletter_queue %>

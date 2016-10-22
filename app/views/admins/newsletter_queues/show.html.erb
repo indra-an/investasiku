@@ -1,0 +1,51 @@
+<div class="row">
+  <%= breadcrumb do %>
+    <%= breadcrumb_item %>
+    <%= breadcrumb_item 'Newsletter Queue', admins_newsletter_queues_path %>
+    <%= breadcrumb_item 'Preview' %>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header"><%= @newsletter_queue.subject %></h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <% case @newsletter_queue.status %>
+          <% when 'queued' %>
+            <div class="text-info"><span class="glyphicon glyphicon-hourglass"></span>&nbsp;Scheduled tonight.</div>
+          <% when 'sent' %>
+            <div class="text-success"><span class="glyphicon glyphicon-send"></span>&nbsp;Broadcasted</div>
+          <% when 'failed' %>
+            <div class="text-danger"><span class="glyphicon glyphicon-remove"></span>&nbsp;Failed</div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <%= @newsletter_queue.content.html_safe %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <%= link_to admins_newsletter_queues_path, :class => 'btn btn-primary' do %>
+      <span class="glyphicon glyphicon-menu-left"></span>&nbsp;Back
+    <% end %>
+    <%= link_to edit_admins_newsletter_queue_path(@newsletter_queue), :class => 'btn btn-info' do %>
+      <span class="glyphicon glyphicon-pencil"></span>&nbsp;Edit
+    <% end %>
+  </div>
+</div>
