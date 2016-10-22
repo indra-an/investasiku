@@ -28,7 +28,7 @@
             <tbody>
               <% if @tags.empty? %>
                 <tr>
-                  <td colspan="2">You have no tags. <%= link_to 'Create one!', new_admins_tag_path %>.</td>
+                  <td colspan="2">You have no tags. <%= link_to 'Create a new one!', new_admins_tag_path %>.</td>
                 </tr>
               <% else %>
                 <% @tags.each do |tag| %>

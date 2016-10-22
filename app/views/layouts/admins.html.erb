@@ -8,10 +8,12 @@
     <title>Investasiku Dashboard</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <%= stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/chosen/1.6.2/chosen.min.css' %>
     <%= stylesheet_link_tag 'admins', :media => 'all', 'data-turbolinks-track' => 'reload' %>
 
     <%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js' %>
     <%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', :integrity => 'sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', :crossorigin => 'anonymous', 'data-turbolinks-eval' => false %>
+    <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/chosen/1.6.2/chosen.jquery.min.js' %>
     <%= javascript_include_tag 'admins', 'data-turbolinks-track' => 'reload' %>
     <%= javascript_include_tag Ckeditor.cdn_url %>
   </head>
@@ -63,6 +65,11 @@
         <li class="<%= class_for_sidebar(:dashboard) %>">
           <%= link_to admins_dashboard_path do %>
             <span class="glyphicon glyphicon-dashboard"></span>&nbsp;Dashboard
+          <% end %>
+        </li>
+        <li class="<%= class_for_sidebar(:news) %>">
+          <%= link_to admins_news_index_path do %>
+            <span class="glyphicon glyphicon-asterisk"></span>&nbsp;News
           <% end %>
         </li>
         <li class="<%= class_for_sidebar(:glosarries) %>">

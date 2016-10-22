@@ -28,7 +28,7 @@
             <tbody>
               <% if @glosarries.empty? %>
                 <tr>
-                  <td colspan="2">You have no glosarries. <%= link_to 'Create one!', new_admins_glosarry_path %>.</td>
+                  <td colspan="2">You have no glosarries. <%= link_to 'Create a new one!', new_admins_glosarry_path %>.</td>
                 </tr>
               <% else %>
                 <% @glosarries.each do |glosarry| %>

@@ -1,0 +1,15 @@
+<div class="row">
+  <%= breadcrumb do %>
+    <%= breadcrumb_item %>
+    <%= breadcrumb_item 'News', admins_news_index_path %>
+    <%= breadcrumb_item 'Create News' %>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">Create a News</h1>
+  </div>
+</div>
+
+<%= render 'form', news: @news %>

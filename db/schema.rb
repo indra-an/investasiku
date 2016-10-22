@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161020004334) do
+ActiveRecord::Schema.define(version: 20161020032006) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,25 @@ ActiveRecord::Schema.define(version: 20161020004334) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "news", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.string   "image"
+    t.integer  "posted_by_id"
+    t.string   "custom_posted_by"
+    t.string   "slug"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["posted_by_id"], name: "index_news_on_posted_by_id", using: :btree
+  end
+
+  create_table "news_tags", id: false, force: :cascade do |t|
+    t.integer "news_id"
+    t.integer "tag_id"
+    t.index ["news_id"], name: "index_news_tags_on_news_id", using: :btree
+    t.index ["tag_id"], name: "index_news_tags_on_tag_id", using: :btree
+  end
+
   create_table "tags", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -100,4 +119,6 @@ ActiveRecord::Schema.define(version: 20161020004334) do
     t.index ["visit_token"], name: "index_visits_on_visit_token", unique: true, using: :btree
   end
 
+  add_foreign_key "news_tags", "news"
+  add_foreign_key "news_tags", "tags"
 end
