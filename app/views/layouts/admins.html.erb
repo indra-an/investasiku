@@ -81,10 +81,30 @@
             <span class="glyphicon glyphicon-tags"></span>&nbsp;Tags
           <% end %>
         </li>
+        <li class="<%= class_for_sidebar(:investment_tips) %>">
+          <%= link_to '#' do %>
+            <span class="glyphicon glyphicon-blackboard"></span>&nbsp;Investment Tips
+          <% end %>
+        </li>
+        <li class="<%= class_for_sidebar(:learning_modules) %>">
+          <%= link_to '#' do %>
+            <span class="glyphicon glyphicon-modal-window"></span>&nbsp;Learning Modules
+          <% end %>
+        </li>
+        <li class="<%= class_for_sidebar(:newsletters) %>">
+          <%= link_to '#' do %>
+            <span class="glyphicon glyphicon-send"></span>&nbsp;Newsletter Queues
+          <% end %>
+        </li>
         <li role="presentation" class="divider"></li>
         <li class="<%= class_for_sidebar(:admins) %>">
           <%= link_to admins_admins_path do %>
             <span class="glyphicon glyphicon-user"></span>&nbsp;Admin Accounts
+          <% end %>
+        </li>
+        <li class="<%= class_for_sidebar(:settings) %>">
+          <%= link_to '#' do %>
+            <span class="glyphicon glyphicon-wrench"></span>&nbsp;Preferences
           <% end %>
         </li>
       </ul>
