@@ -37,9 +37,12 @@
                     <td><%= newsletter_queue.subject %></td>
                     <td><%= newsletter_queue.status %></td>
                     <td>
-                      <%= link_to 'Preview', admins_newsletter_queue_path(newsletter_queue) %>&nbsp;|
-                      <%= link_to 'Edit', edit_admins_newsletter_queue_path(newsletter_queue) %>&nbsp;|
-                      <%= link_to 'Destroy', admins_newsletter_queue_path(newsletter_queue), :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+                      <%= link_to 'Preview', admins_newsletter_queue_path(newsletter_queue) %>
+                      <% if newsletter_queue.queued? %>
+                        &nbsp;|
+                        <%= link_to 'Edit', edit_admins_newsletter_queue_path(newsletter_queue) %>&nbsp;|
+                        <%= link_to 'Destroy', admins_newsletter_queue_path(newsletter_queue), :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+                      <% end %>
                     </td>
                   </tr>
                 <% end %>

@@ -1,7 +1,7 @@
 class NewsletterQueue < ApplicationRecord
   validates_presence_of :subject, :content
 
-  enum :status => [:queued, :sent, :failed]
+  enum :status => [:queued, :processing, :sent, :failed]
 
   # used by rake cron task to broadcast newsletters
   def broadcast
