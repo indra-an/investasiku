@@ -932,3 +932,10 @@ h1.page-header {
   height: 65px;
   overflow: scroll;
 }
+
+.notification {
+  position: fixed;
+  top: 5em;
+  right: 2em;
+  z-index: 99999;
+}

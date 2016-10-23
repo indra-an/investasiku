@@ -146,5 +146,11 @@
         </div>
       </div>
     </div>
+
+    <% if notice %>
+      <div class="alert alert-success notification" role="alert">
+        <strong>Congratulations!</strong>&nbsp;<%= notice %>
+      </div>
+    <% end %>
   </body>
 </html>
