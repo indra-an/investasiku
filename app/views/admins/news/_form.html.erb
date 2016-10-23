@@ -34,7 +34,7 @@
           <div class="form-group">
             <%= f.label :content, :class => 'col-sm-2 control-label' %>
             <div class="col-sm-10">
-              <%= f.cktext_area :content %>
+              <%= f.cktext_area :content, :class => 'ckeditor' %>
             </div>
           </div>
 
@@ -48,7 +48,7 @@
           <div class="form-group">
             <%= f.label :tags, :class => 'col-sm-2 control-label' %>
             <div class="col-sm-10">
-              <%= f.select :tag_ids, @tags, {}, :multiple => true %>
+              <%= f.select :tag_ids, @tags, {}, :multiple => true, :class => 'chosen' %>
             </div>
           </div>
 
@@ -67,12 +67,3 @@
     </div>
   </div>
 </div>
-
-<script>
-  $('#news_tag_ids').chosen({
-    width: '100%',
-    no_results_text: 'No tags matches',
-    placeholder_text_multiple: 'Select tags'
-  });
-  CKEDITOR.replace('news_content');
-</script>

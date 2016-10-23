@@ -78,7 +78,7 @@
             </div>
             <div class="form-group" data-no-turbolink>
               <%= f.label :content, :class => 'control-label' %>
-              <%= f.cktext_area :content %>
+              <%= f.cktext_area :content, :class => 'ckeditor' %>
             </div>
             <%= f.submit 'Queue Newsletter', :class => 'btn btn-info btn-md pull-right' %>
           </fieldset>
@@ -124,7 +124,3 @@
     </div>
   </div>
 </div>
-
-<script>
-  CKEDITOR.replace('newsletter_queue_content');
-</script>
