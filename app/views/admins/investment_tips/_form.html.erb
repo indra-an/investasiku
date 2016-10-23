@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <%= form_for([:admins, investment_tip], :html => { :class => 'form-horizontal' }) do |f| %>
+          <% if investment_tip.errors.any? %>
+            <div class="alert alert-danger" role="alert">
+              <strong>Ops! <%= pluralize(investment_tip.errors.count, "error") %> found:</strong><br/>
+              <ul>
+                <% investment_tip.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="form-group">
+            <%= f.label :title, :class => 'col-sm-2 control-label' %>
+            <div class="col-sm-10">
+              <%= f.text_field :title, :class => 'form-control' %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :content, :class => 'col-sm-2 control-label' %>
+            <div class="col-sm-10">
+              <%= f.cktext_area :content %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :custom_posted_by, 'Posted by', :class => 'col-sm-2 control-label' %>
+            <div class="col-sm-10">
+              <%= f.text_field :custom_posted_by, :class => 'form-control' %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 text-right">
+              <%= link_to admins_investment_tips_path, :class => 'btn btn-warning' do %>
+                <span class="glyphicon glyphicon-menu-left"></span>&nbsp;Back
+              <% end %>
+            </div>
+            <div class="col-md-6 text-left">
+              <%= f.submit 'Save', :class => 'btn btn-primary' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  CKEDITOR.replace('investment_tip_content');
+</script>

@@ -9,12 +9,13 @@ Rails.application.routes.draw do
 
     put 'update_full_name' => 'dashboard#update_full_name'
     put 'update_password' => 'dashboard#update_password'
-    post 'queue_newsletter' => 'dashboard#queue_newsletter'
 
     resources :admins, :except => [:show, :edit]
     resources :tags, :except => [:show]
     resources :glosarries
     resources :news
     resources :newsletter_queues
+    resources :learning_modules
+    resources :investment_tips
   end
 end

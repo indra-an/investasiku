@@ -29,7 +29,7 @@
             <tbody>
               <% if @news.empty? %>
                 <tr>
-                  <td colspan="4">You have no news. <%= link_to 'Create a new one!', new_admins_news_path %>.</td>
+                  <td colspan="3">You have no news. <%= link_to 'Create a new one!', new_admins_news_path %>.</td>
                 </tr>
               <% else %>
                 <% @news.each do |news| %>
@@ -54,4 +54,3 @@
     </div>
   </div>
 </div>
-

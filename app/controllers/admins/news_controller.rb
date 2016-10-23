@@ -59,7 +59,7 @@ class Admins::NewsController < Admins::BaseController
     # Only allow a trusted parameter "white list" through.
     def news_params
       params[:news][:posted_by_id] = current_admin.id
-      params[:news][:custom_posted_by] = nil if  params[:news][:custom_posted_by].blank?
+      params[:news][:custom_posted_by] = nil if params[:news][:custom_posted_by].blank?
       params.require(:news).permit(:title, :content, :image, :posted_by_id,
                                    :custom_posted_by, :tag_ids => [])
     end

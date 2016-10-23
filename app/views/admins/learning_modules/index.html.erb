@@ -1,0 +1,56 @@
+<div class="row">
+  <%= breadcrumb do %>
+    <%= breadcrumb_item %>
+    <%= breadcrumb_item 'Learning Modules' %>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">Learning Module Management</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <table class="table table-striped table-hover">
+          <%= link_to new_admins_learning_module_path, :class => 'btn btn-success pull-right' do %>
+            <span class="glyphicon glyphicon-plus"></span>&nbsp;Create Learning Module
+          <% end %>
+          <thead>
+            <th>Title</th>
+            <th>Posted</th>
+            <th>Control</th>
+          </thead>
+
+          <tbody>
+            <tbody>
+              <% if @learning_modules.empty? %>
+                <tr>
+                  <td colspan="3">You have no learning modules. <%= link_to 'Create a new one!', new_admins_learning_module_path %>.</td>
+                </tr>
+              <% else %>
+                <% @learning_modules.each do |learning_module| %>
+                  <tr>
+                    <td><%= learning_module.title %></td>
+                    <td>
+                      <%= learning_module.created_at.to_s %><br/>
+                      <%= learning_module.custom_posted_by || learning_module.posted_by.full_name %>
+                    </td>
+                    <td>
+                      <%= link_to 'Preview', admins_learning_module_path(learning_module) %>&nbsp;|
+                      <%= link_to 'Edit', edit_admins_learning_module_path(learning_module) %>&nbsp;|
+                      <%= link_to 'Destroy', admins_learning_module_path(learning_module), :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+                    </td>
+                  </tr>
+                <% end %>
+              <% end %>
+            </tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

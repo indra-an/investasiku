@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161022134015) do
+ActiveRecord::Schema.define(version: 20161023060404) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,28 @@ ActiveRecord::Schema.define(version: 20161022134015) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "investment_tips", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "posted_by_id"
+    t.string   "custom_posted_by"
+    t.string   "slug"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["posted_by_id"], name: "index_investment_tips_on_posted_by_id", using: :btree
+  end
+
+  create_table "learning_modules", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "posted_by_id"
+    t.string   "custom_posted_by"
+    t.string   "slug"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["posted_by_id"], name: "index_learning_modules_on_posted_by_id", using: :btree
   end
 
   create_table "news", force: :cascade do |t|

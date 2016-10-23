@@ -1,0 +1,15 @@
+<div class="row">
+  <%= breadcrumb do %>
+    <%= breadcrumb_item %>
+    <%= breadcrumb_item 'Investment Tips', admins_investment_tips_path %>
+    <%= breadcrumb_item 'Edit Investment Tip' %>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">Edit <%= @investment_tip.title %></h1>
+  </div>
+</div>
+
+<%= render 'form', investment_tip: @investment_tip %>

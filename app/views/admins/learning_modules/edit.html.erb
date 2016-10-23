@@ -1,0 +1,15 @@
+<div class="row">
+  <%= breadcrumb do %>
+    <%= breadcrumb_item %>
+    <%= breadcrumb_item 'Learning Modules', admins_learning_modules_path %>
+    <%= breadcrumb_item 'Edit Learning Module' %>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">Edit <%= @learning_module.title %></h1>
+  </div>
+</div>
+
+<%= render 'form', learning_module: @learning_module %>
