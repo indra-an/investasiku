@@ -24,7 +24,8 @@ module AdminsHelper
     end
   end
 
-  def class_for_sidebar(menu)
-    controller.controller_name.eql?(menu.to_s) ? 'active' : ''
+  def class_for_sidebar(_controller, _action = nil)
+    controller.controller_name.eql?(_controller.to_s) &&
+      (_action.nil? || controller.action_name.eql?(_action.to_s)) ? 'active' : ''
   end
 end

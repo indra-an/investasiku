@@ -61,7 +61,7 @@
         </div>
       </form>
       <ul class="nav menu">
-        <li class="<%= class_for_sidebar(:dashboard) %>">
+        <li class="<%= class_for_sidebar(:dashboard, :index) %>">
           <%= link_to admins_dashboard_path do %>
             <span class="glyphicon glyphicon-dashboard"></span>&nbsp;Dashboard
           <% end %>
@@ -102,8 +102,8 @@
             <span class="glyphicon glyphicon-user"></span>&nbsp;Admin Accounts
           <% end %>
         </li>
-        <li class="<%= class_for_sidebar(:settings) %>">
-          <%= link_to '#' do %>
+        <li class="<%= class_for_sidebar(:dashboard, :preferences) %>">
+          <%= link_to admins_preferences_path do %>
             <span class="glyphicon glyphicon-wrench"></span>&nbsp;Preferences
           <% end %>
         </li>

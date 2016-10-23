@@ -11,6 +11,9 @@ class Admins::DashboardController < Admins::BaseController
                                         :format => '%b %d').count
   end
 
+  def preferences
+  end
+
   def update_full_name
     current_admin.full_name = params[:full_name]
     @status = current_admin.save
