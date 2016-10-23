@@ -5,6 +5,10 @@ class Admins::DashboardController < Admins::BaseController
     @server_memory = Usagewatch.uw_memused rescue nil
     @server_storage = Usagewatch.uw_diskused_perc rescue nil
     @newsletter_queue = NewsletterQueue.new
+    @statistics = [0, 0, Visit.count]
+    @daily_traffic = Visit.group_by_day(:started_at,
+                                        :range => 1.month.ago.midnight..Time.now,
+                                        :format => '%b %d').count
   end
 
   def queue_newsletter

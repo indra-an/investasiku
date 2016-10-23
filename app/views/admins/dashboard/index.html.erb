@@ -18,7 +18,7 @@
           <div class="large-2"><span class="glyphicon glyphicon-equalizer"></span></div>
         </div>
         <div class="col-sm-9 col-lg-7 widget-right">
-          <div class="large">120</div>
+          <div class="large"><%= number_for_statistics(@statistics[0]) %></div>
           <div class="text-muted">This Month</div>
         </div>
       </div>
@@ -31,7 +31,7 @@
           <div class="large-2"><span class="glyphicon glyphicon-stats"></span></div>
         </div>
         <div class="col-sm-9 col-lg-7 widget-right">
-          <div class="large">52</div>
+          <div class="large"><%= number_for_statistics(@statistics[1]) %></div>
           <div class="text-muted">Last Month</div>
         </div>
       </div>
@@ -44,7 +44,7 @@
           <div class="large-2"><span class="glyphicon glyphicon-globe"></span></div>
         </div>
         <div class="col-sm-9 col-lg-7 widget-right">
-          <div class="large">25.2k</div>
+          <div class="large"><%= number_for_statistics(@statistics[2]) %></div>
           <div class="text-muted">Total Page Views</div>
         </div>
       </div>
@@ -58,7 +58,7 @@
       <div class="panel-heading"><span class="glyphicon glyphicon-signal"></span>&nbsp;Site Traffic Overview</div>
       <div class="panel-body">
         <div class="canvas-wrapper">
-          <%= column_chart({ "Football" => 10, "Basketball" => 5 }) %>
+          <%= column_chart(@daily_traffic, xtitle: 'Date', ytitle: 'Traffic') %>
         </div>
       </div>
     </div>

@@ -16,6 +16,7 @@ gem 'ckeditor'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'ahoy_matey'
+gem 'groupdate'
 
 group :development, :test do
   gem 'byebug', platform: :mri
