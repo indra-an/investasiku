@@ -101,7 +101,7 @@
         <div class="panel panel-default">
           <div class="panel-body easypiechart-panel">
             <h4>Server CPU</h4>
-            <div class="easypiechart" id="easypiechart-orange"><span class="percent"><%= @server_cpu.nil? ? 'N/A' : @server_cpu + '%' %></span></div>
+            <div class="easypiechart" id="easypiechart-orange"><span class="percent"><%= @server_cpu.nil? ? 'N/A' : @server_cpu.to_s + '%' %></span></div>
           </div>
         </div>
       </div>
@@ -109,7 +109,7 @@
         <div class="panel panel-default">
           <div class="panel-body easypiechart-panel">
             <h4>Server Memory</h4>
-            <div class="easypiechart" id="easypiechart-teal"><span class="percent"><%= @server_memory.nil? ? 'N/A' : @server_memory + '%' %></span></div>
+            <div class="easypiechart" id="easypiechart-teal"><span class="percent"><%= @server_memory.nil? ? 'N/A' : @server_memory.to_s + '%' %></span></div>
           </div>
         </div>
       </div>
@@ -117,7 +117,7 @@
         <div class="panel panel-default">
           <div class="panel-body easypiechart-panel">
             <h4>Server Storage</h4>
-            <div class="easypiechart" id="easypiechart-red"><span class="percent"><%= @server_storage.nil? ? 'N/A' : @server_storage + '%' %></span></div>
+            <div class="easypiechart" id="easypiechart-red"><span class="percent"><%= @server_storage.nil? ? 'N/A' : @server_storage.to_s + '%' %></span></div>
           </div>
         </div>
       </div>
