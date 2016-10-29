@@ -1,14 +1,82 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Investasiku</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <title>Investasiku</title>
+
+    <%= stylesheet_link_tag 'application', :media => 'all', 'data-turbolinks-track' => 'reload' %>
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Raleway|Roboto+Slab' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="front-bg">
+    <div class="navbar-header navbar-fixed-top transparent <%= navbar_class_for_action %>">
+      <button data-toggle="collapse-side" data-target=".side-collapse" data-target-2=".side-collapse-container" type="button" class="navbar-toggle pull-left"><i class="fa fa-bars mobile" aria-hidden="true"></i></button>
+    </div>
+    <div class="navbar-inverse side-collapse in navbar-fixed-top mobile transparent <%= navbar_class_for_action %>">
+      <nav role="navigation" class="navbar-collapse">
+        <%= link_to '', root_path, :class => 'navbar-brand mobile' %>
+        <ul class="nav navbar-nav menu-kolegial navbar-right mobile">
+          <li class="<%= class_for_content_indicator(:home, :index) %>"><%= link_to 'Home', root_path %></li>
+          <li class="<%= class_for_content_indicator(:home, :my_news, :news_view) %>"><%= link_to 'Beritaku', public_news_path %></a></li>
+          <li class="<%= class_for_content_indicator(:home, :investment_tips) %>"><%= link_to 'Tips & Trick', public_tips_path %></a></li>
+          <li class="<%= class_for_content_indicator(:home, :glossary) %>"><%= link_to 'Glossary', public_glossary_path %></a></li>
+          <li><%= link_to 'Learning Module', public_module_path, :class => 'learning-btn' %></li>
+          <li class="search-mobile hidden-lg hidden-sm hidden-md">
+            <div class="input-group">
+              <input type="text" class="form-control invest-rad-30" placeholder="Search for...">
+              <span class="input-group-btn">
+                <button class="btn btn-default invest-rad-30" type="button"><i class="fa fa-search"></i></button>
+              </span>
+            </div>
+          </li>
+
+          <div id="sb-search" class="sb-search hidden-xs">
+            <%= form_tag public_perform_search_path, :method => :get do %>
+              <%= text_field_tag :query, '', :class => 'sb-search-input', :placeholder => 'Enter your search term...', :type => 'search' %>
+              <%= submit_tag '', :class => 'sb-search-submit' %>
+              <span class="sb-icon-search"><i class="fa fa-search"></i></span>
+            <% end %>
+          </div>
+        </ul>
+      </nav>
+    </div>
+
+    <section class="side-collapse-container">
+      <%= yield %>
+
+      <footer class="footer text-left">
+        <div class="container">
+          <div class="row">
+            <div class="no-padding col-md-3 col-sm-12 col-xs-12">
+              <h4 class="white"><strong>Investasiku</strong></h4>
+              <p class="light grey font-12">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+            </div>
+
+            <div class="col-md-4 col-md-offset-1 col-sm-12 col-xs-12 link-footer">
+              <div class="col-md-4 col-sm-3 col-xs-12 about">
+                <h5 class="grey"><strong>About</strong></h5>
+                <a href="" class="disp-block dark-grey"><strong>Team</strong></a>
+                <a href="" class="disp-block dark-grey"><strong>Blog</strong></a>
+                <a href="" class="disp-block dark-grey"><strong>Company</strong></a>
+                <a href="" class="disp-block dark-grey"><strong>Contact</strong></a>
+              </div>
+            </div>
+
+            <div class=" col-md-4 col-sm-12 col-xs-12 latest">
+              <a href="" class="dark-grey"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+              <a href="" class="dark-grey"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+              <a href="" class="dark-grey"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </section>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+    <%= yield :javascript %>
   </body>
 </html>

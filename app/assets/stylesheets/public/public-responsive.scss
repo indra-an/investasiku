@@ -1,0 +1,152 @@
+@media (max-width: 1024px) {
+	.container-custom {
+		width: 100%;
+	}
+
+	.beritaku-content {
+		width: 46%;
+		margin-right: 7px;
+		margin-left: 10px;
+		margin-bottom: 25px;
+	}
+
+	.front-beritaku .row, .front-investment-theme .row, .front-glossary .row {
+    margin: 0;
+}
+
+.front-beritaku, .front-investment-theme, .front-glossary {
+	padding: 0;
+}
+
+.front-pad-left {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.beritaku-hot-split {
+	width: 100%;
+}
+
+.front-page.bottom-section {
+    padding: 0px 25px;
+    margin-bottom: 50px;
+}
+
+.col-md-4.col-sm-3.col-xs-12.about {
+    width: 100%;
+}
+
+
+
+}
+
+@media (max-width: 768px) {
+	html{
+		padding-bottom: 0;
+	}
+
+	footer {
+		bottom: inherit !important;
+	}
+
+.footer {
+	text-align: center;
+}
+
+.col-md-4.col-sm-12.col-xs-12.latest a {
+    display: inline;
+    float: none;
+    margin: 0 5px;
+}
+
+.col-md-4.col-sm-12.col-xs-12.latest {
+	margin-top: 35px;
+}
+
+	.container-custom {
+		width: 100%;
+	}
+
+	.beritaku-content {
+		width: 48%;
+		margin-right: 5px;
+		margin-left: 5px;
+		margin-bottom: 25px;
+	}
+
+	.investment-left, .news-content, .beritaku {
+	    padding-right: 15px;
+	}
+
+	.glossary-left {
+		padding-left: 75px;
+		padding-right: 20px;
+	}
+
+	.glossary-content .share-group .btnz {
+	    margin-bottom: 10px;
+	}
+
+	.glossary-page .col-md-4.col-sm-12.col-xs-12.latest-news {
+	    padding-left: 75px;
+	}
+
+	.front-page.bottom-section {
+    padding: 0;
+    margin-bottom: 50px;
+}
+
+.footer {
+	padding: 50px 0;
+}
+
+.footer .container {
+	padding: 0 50px;
+}
+
+.front-page.bottom-section .container {
+    padding: 0;
+}
+
+.front-beritaku-small {
+    padding: 20px 0 20px 30px;
+}
+
+.beritaku-wrapper {
+	width: 30%;
+}
+
+.beritaku-wrapper img{
+	width: 120%;
+	margin-left: -15px;
+	margin-top: -10px;
+	height: auto;
+}
+
+.front-investment-small.border-bottom .headline-small-sect {
+	width: 100%;
+}
+
+.latest-news{
+		display: none;
+	}
+
+	.glossary-page, .beritaku-page {
+    padding-top: 75px;
+}
+
+.home-jumbotron {
+	padding: 0 25px;
+}
+
+}
+
+@media (max-width: 500px) {
+	.beritaku-content {
+		width: 100%;
+		margin-right: 0;
+		margin-left: 0;
+		margin-bottom: 25px;
+	}
+	
+}
