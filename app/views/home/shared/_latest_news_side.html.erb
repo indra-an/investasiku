@@ -1,0 +1,19 @@
+<div class="col-md-4 col-sm-12 col-xs-12 latest-news">
+  <div class="latest-header investasiku-bg-color">
+    <h4 class=white>Latest News</h4>
+  </div>
+
+  <% @latest_news.each do |news| %>
+    <div class="front-beritaku-small border-bottom">
+      <%= link_to public_news_view_path(news.slug), :class => 'sect-child row no-margin' do %>
+        <div class="beritaku-wrapper">
+          <%= image_tag news.image_url || 'tax.jpg', :class => 'imej' %>
+        </div>
+        <div class="headline-small-sect">
+          <h5 class="investasiku-color"><%= news.title %></h5>
+          <p class="font-12 grey"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<%= l news.created_at %></p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

@@ -17,6 +17,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'ahoy_matey'
 gem 'groupdate'
+gem 'kaminari'
 
 group :development, :test do
   gem 'byebug', platform: :mri

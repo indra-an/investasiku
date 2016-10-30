@@ -36,6 +36,7 @@
 
           <div id="sb-search" class="sb-search hidden-xs">
             <%= form_tag public_perform_search_path, :method => :get do %>
+              <%= hidden_field_tag :tag, params[:tag] %>
               <%= text_field_tag :query, '', :class => 'sb-search-input', :placeholder => 'Enter your search term...', :type => 'search' %>
               <%= submit_tag '', :class => 'sb-search-submit' %>
               <span class="sb-icon-search"><i class="fa fa-search"></i></span>

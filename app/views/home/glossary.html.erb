@@ -8,167 +8,22 @@
               <div class="col-md-6 no-padding">
                 <h3 class="investasiku-color uppercase">Invesment Glossary</h3>
               </div>
-              <div class="col-md-6 no-padding">
-                <div class="input-group">
-                  <input type="text" class="form-control invest-rad-30" placeholder="Search for...">
-                  <span class="input-group-btn">
-                    <button class="btn btn-default invest-rad-30" type="button"><i class="fa fa-search"></i></button>
-                  </span>
-                </div>
-              </div>
-            </div>
 
-            <div class="glossary-content border-bottom">
-              <h4 class="investasiku-color">Price to Earnings Ratio</h4>
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam.</p>
-              <div class="share-group row no-margin">
-                <!-- Facebook Share Button -->
-                <a class="btnz share facebook" href="#"><i class="fa fa-facebook"></i> Share</a>
-                <!-- Googple Plus Share Button -->
-                <a class="btnz share gplus" href="#"><i class="fa fa-google-plus"></i> Share</a>
-                <!-- Twitter Share Button -->
-                <a class="btnz share twitter" href="#"><i class="fa fa-twitter"></i> Tweet</a>
-                <!-- Stumbleupon Share Button -->
-                <a class="btnz share stumbleupon" href="#"><i class="fa fa-stumbleupon"></i> Stumble</a>
-                <!-- Pinterest Share Button -->
-                <a class="btnz share pinterest" href="#"><i class="fa fa-pinterest"></i> Pin it</a>
-                <!-- LinkedIn Share Button -->
-                <a class="btnz share linkedin" href="#"><i class="fa fa-linkedin"></i> LinkedIn</a>
-                <!-- Buffer Share Button -->
-                <a class="btnz share buffer" href="#"><i class="fa fa-share-square-o"></i> Buffer</a>
-              </div>
+              <%= render :partial => 'home/shared/form_search_context', :locals => { :route => public_glossary_path, :placeholder => 'Search glossary...' } %>
             </div>
-
-            <div class="glossary-content border-bottom">
-              <h4 class="investasiku-color">Price to Earnings Ratio</h4>
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam.</p>
-              <div class="share-group row no-margin">
-                <!-- Facebook Share Button -->
-                <a class="btnz share facebook" href="#"><i class="fa fa-facebook"></i> Share</a>
-                <!-- Googple Plus Share Button -->
-                <a class="btnz share gplus" href="#"><i class="fa fa-google-plus"></i> Share</a>
-                <!-- Twitter Share Button -->
-                <a class="btnz share twitter" href="#"><i class="fa fa-twitter"></i> Tweet</a>
-                <!-- Stumbleupon Share Button -->
-                <a class="btnz share stumbleupon" href="#"><i class="fa fa-stumbleupon"></i> Stumble</a>
-                <!-- Pinterest Share Button -->
-                <a class="btnz share pinterest" href="#"><i class="fa fa-pinterest"></i> Pin it</a>
-                <!-- LinkedIn Share Button -->
-                <a class="btnz share linkedin" href="#"><i class="fa fa-linkedin"></i> LinkedIn</a>
-                <!-- Buffer Share Button -->
-                <a class="btnz share buffer" href="#"><i class="fa fa-share-square-o"></i> Buffer</a>
-              </div>
-            </div>
-
-            <div class="glossary-content border-bottom">
-              <h4 class="investasiku-color">Price to Earnings Ratio</h4>
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam.</p>
-              <div class="share-group row no-margin">
-                <!-- Facebook Share Button -->
-                <a class="btnz share facebook" href="#"><i class="fa fa-facebook"></i> Share</a>
-                <!-- Googple Plus Share Button -->
-                <a class="btnz share gplus" href="#"><i class="fa fa-google-plus"></i> Share</a>
-                <!-- Twitter Share Button -->
-                <a class="btnz share twitter" href="#"><i class="fa fa-twitter"></i> Tweet</a>
-                <!-- Stumbleupon Share Button -->
-                <a class="btnz share stumbleupon" href="#"><i class="fa fa-stumbleupon"></i> Stumble</a>
-                <!-- Pinterest Share Button -->
-                <a class="btnz share pinterest" href="#"><i class="fa fa-pinterest"></i> Pin it</a>
-                <!-- LinkedIn Share Button -->
-                <a class="btnz share linkedin" href="#"><i class="fa fa-linkedin"></i> LinkedIn</a>
-                <!-- Buffer Share Button -->
-                <a class="btnz share buffer" href="#"><i class="fa fa-share-square-o"></i> Buffer</a>
-              </div>
+            <div id="glossary-list">
+              <%= render 'home/ajax/glossary_list_item' %>
             </div>
           </div>
 
-          <div class="col-md-4 col-sm-12 col-xs-12 latest-news">
-            <div class="latest-header investasiku-bg-color">
-              <h4 class=white>Latest News</h4>
-            </div>
-
-            <div class="front-beritaku-small border-bottom">
-              <a href="#" class="sect-child row no-margin">
-                <!-- <hr> -->
-                <div class="beritaku-wrapper">
-                  <%= image_tag 'tax.jpg', :class => 'imej' %>
-                </div>
-                <div class="headline-small-sect">
-                  <h5 class="investasiku-color">Lorem Ipsum dolor sit ametLorem Ipsum dolor sit amet</h5>
-                  <p class="font-12 grey"><i class="fa fa-clock-o" aria-hidden="true"></i>  25th February 2016</p>
-                </div>
-              </a>
-            </div>
-
-            <div class="front-beritaku-small border-bottom">
-              <a href="#" class="sect-child row no-margin">
-                <!-- <hr> -->
-                <div class="beritaku-wrapper">
-                  <%= image_tag 'tax.jpg', :class => 'imej' %>
-                </div>
-                <div class="headline-small-sect">
-                  <h5 class="investasiku-color">Lorem Ipsum dolor sit ametLorem Ipsum dolor sit amet</h5>
-                  <p class="font-12 grey"><i class="fa fa-clock-o" aria-hidden="true"></i>  25th February 2016</p>
-                </div>
-              </a>
-            </div>
-
-            <div class="front-beritaku-small border-bottom">
-              <a href="#" class="sect-child row no-margin">
-                <!-- <hr> -->
-                <div class="beritaku-wrapper">
-                  <%= image_tag 'tax.jpg', :class => 'imej' %>
-                </div>
-                <div class="headline-small-sect">
-                  <h5 class="investasiku-color">Lorem Ipsum dolor sit ametLorem Ipsum dolor sit amet</h5>
-                  <p class="font-12 grey"><i class="fa fa-clock-o" aria-hidden="true"></i>  25th February 2016</p>
-                </div>
-              </a>
-            </div>
-
-            <div class="front-beritaku-small border-bottom">
-              <a href="#" class="sect-child row no-margin">
-                <!-- <hr> -->
-                <div class="beritaku-wrapper">
-                  <%= image_tag 'tax.jpg', :class => 'imej' %>
-                </div>
-                <div class="headline-small-sect">
-                  <h5 class="investasiku-color">Lorem Ipsum dolor sit ametLorem Ipsum dolor sit amet</h5>
-                  <p class="font-12 grey"><i class="fa fa-clock-o" aria-hidden="true"></i>  25th February 2016</p>
-                </div>
-              </a>
-            </div>
-          </div>
+          <%= render 'home/shared/latest_news_side' %>
 
           <div class="pagination fixed-left">
             <a href="" class="up-btn investasiku-color text-center disabled"><i class="fa fa-sort-up"></i></a>
             <a href="" class="down-btn investasiku-color text-center"><i class="fa fa-sort-down"></i></a>
-            <a href="" class="investasiku-bg-color uppercase white glo-page active">a</a>
-            <a href="" class="investasiku-bg-color uppercase white glo-page">b</a>
-            <a href="" class="investasiku-bg-color uppercase white glo-page">c</a>
-            <a href="" class="investasiku-bg-color uppercase white glo-page">d</a>
-            <a href="" class="investasiku-bg-color uppercase white glo-page">e</a>
-            <a href="" class="investasiku-bg-color uppercase white glo-page">f</a>
-            <a href="" class="investasiku-bg-color uppercase white glo-page">g</a>
-            <a href="" class="investasiku-bg-color uppercase white glo-page">h</a>
-            <a href="" class="investasiku-bg-color uppercase white glo-page">i</a>
-            <a href="" class="investasiku-bg-color uppercase white glo-page">j</a>
-            <a href="" class="investasiku-bg-color uppercase white glo-page">k</a>
-            <a href="" class="investasiku-bg-color uppercase white glo-page">l</a>
-            <a href="" class="investasiku-bg-color uppercase white glo-page">m</a>
-            <a href="" class="investasiku-bg-color uppercase white glo-page">n</a>
-            <a href="" class="investasiku-bg-color uppercase white glo-page">o</a>
-            <a href="" class="investasiku-bg-color uppercase white glo-page">p</a>
-            <a href="" class="investasiku-bg-color uppercase white glo-page">q</a>
-            <a href="" class="investasiku-bg-color uppercase white glo-page">r</a>
-            <a href="" class="investasiku-bg-color uppercase white glo-page">s</a>
-            <a href="" class="investasiku-bg-color uppercase white glo-page">t</a>
-            <a href="" class="investasiku-bg-color uppercase white glo-page">u</a>
-            <a href="" class="investasiku-bg-color uppercase white glo-page">v</a>
-            <a href="" class="investasiku-bg-color uppercase white glo-page">w</a>
-            <a href="" class="investasiku-bg-color uppercase white glo-page">x</a>
-            <a href="" class="investasiku-bg-color uppercase white glo-page">y</a>
-            <a href="" class="investasiku-bg-color uppercase white glo-page">z</a>
+            <% @word_indexes.each do |word| %>
+              <a href="#" class="investasiku-bg-color uppercase white glo-page active"><%= word %></a>
+            <% end %>
           </div>
         </div>
       </div>

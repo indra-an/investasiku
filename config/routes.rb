@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'tips' => 'home#investment_tips', :as => :public_tips
   get 'module' => 'home#learning_module', :as => :public_module
   get 'news/:slug' => 'home#news_view', :as => :public_news_view
+  get 'tips/:slug' => 'home#investment_tips_view', :as => :public_tips_view
   get 'lookup' => 'home#perform_search', :as => :public_perform_search
 
   devise_for :admins

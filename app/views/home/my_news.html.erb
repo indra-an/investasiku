@@ -3,177 +3,23 @@
     <div class="row">
       <div class="container">
         <div class="row">
-
-          <!-- content -->
           <div class="col-md-8 col-sm-12 col-xs-12 beritaku">
             <div class="glossary-header clearfix border-bottom">
               <div class="col-sm-6 col-xs-12 no-padding">
                 <h3 class="investasiku-color uppercase">Beritaku</h3>
               </div>
-              <div class="col-sm-6 col-xs-12 no-padding">
-                <div class="input-group">
-                  <input type="text" class="form-control invest-rad-30" placeholder="Search for...">
-                  <span class="input-group-btn">
-                    <button class="btn btn-default invest-rad-30" type="button"><i class="fa fa-search"></i></button>
-                  </span>
-                </div>
-              </div>
+
+              <%= render :partial => 'home/shared/form_search_context', :locals => { :route => public_news_path, :placeholder => 'Search news...' } %>
             </div>
 
             <div class="container-custom">
-              <div class="row">
-                <a href="" class="investasiku-color beritaku-square">
-                  <div class="beritaku-content border-grey">
-                    <div class="wrapper-thumbnail" style="background: url(<%= image_url('tax.jpg') %>); background-size:cover; background-position:center">
-                    </div>
-                    <div class="beritaku-title">
-                      <h4>Lorem Ipsum Dolor Sit Amet</h4>
-                      <div class="share-group beritaku row no-margin">
-                        <!-- Facebook Share Button -->
-                        <a class="btnz share facebook" href="#"><i class="fa fa-facebook"></i></a>
-                        <!-- Googple Plus Share Button -->
-                        <a class="btnz share gplus" href="#"><i class="fa fa-google-plus"></i></a>
-                        <!-- Twitter Share Button -->
-                        <a class="btnz share twitter" href="#"><i class="fa fa-twitter"></i></a>
-                        <!-- Pinterest Share Button -->
-                        <a class="btnz share pinterest" href="#"><i class="fa fa-pinterest"></i></a>
-                        <!-- LinkedIn Share Button -->
-                        <a class="btnz share linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-                      </div>
-                      <p class="grey time-beritaku"><i class="fa fa-clock-o"></i> 12 February 2016</p>
-                    </div>
-                  </div>
-                </a>
-
-                <a href="" class="investasiku-color beritaku-square">
-                  <div class="beritaku-content border-grey">
-                    <div class="wrapper-thumbnail" style="background: url(<%= image_url('tax.jpg') %>); background-size:cover; background-position:center">
-                    </div>
-                    <div class="beritaku-title">
-                      <h4>Lorem Ipsum Dolor Sit Amet</h4>
-                      <div class="share-group beritaku row no-margin">
-                        <!-- Facebook Share Button -->
-                        <a class="btnz share facebook" href="#"><i class="fa fa-facebook"></i></a>
-                        <!-- Googple Plus Share Button -->
-                        <a class="btnz share gplus" href="#"><i class="fa fa-google-plus"></i></a>
-                        <!-- Twitter Share Button -->
-                        <a class="btnz share twitter" href="#"><i class="fa fa-twitter"></i></a>
-                        <!-- Pinterest Share Button -->
-                        <a class="btnz share pinterest" href="#"><i class="fa fa-pinterest"></i></a>
-                        <!-- LinkedIn Share Button -->
-                        <a class="btnz share linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-                      </div>
-                      <p class="grey time-beritaku"><i class="fa fa-clock-o"></i> 12 February 2016</p>
-                    </div>
-                  </div>
-                </a>
-
-                <a href="" class="investasiku-color beritaku-square">
-                  <div class="beritaku-content border-grey">
-                    <div class="wrapper-thumbnail" style="background: url(<%= image_url('tax.jpg') %>); background-size:cover; background-position:center">
-                    </div>
-                    <div class="beritaku-title">
-                      <h4>Lorem Ipsum Dolor Sit Amet</h4>
-                      <div class="share-group beritaku row no-margin">
-                        <!-- Facebook Share Button -->
-                        <a class="btnz share facebook" href="#"><i class="fa fa-facebook"></i></a>
-                        <!-- Googple Plus Share Button -->
-                        <a class="btnz share gplus" href="#"><i class="fa fa-google-plus"></i></a>
-                        <!-- Twitter Share Button -->
-                        <a class="btnz share twitter" href="#"><i class="fa fa-twitter"></i></a>
-                        <!-- Pinterest Share Button -->
-                        <a class="btnz share pinterest" href="#"><i class="fa fa-pinterest"></i></a>
-                        <!-- LinkedIn Share Button -->
-                        <a class="btnz share linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-                      </div>
-                      <p class="grey time-beritaku"><i class="fa fa-clock-o"></i> 12 February 2016</p>
-                    </div>
-                  </div>
-                </a>
-
-                <a href="" class="investasiku-color beritaku-square">
-                  <div class="beritaku-content border-grey">
-                    <div class="wrapper-thumbnail" style="background: url(<%= image_url('tax.jpg') %>); background-size:cover; background-position:center">
-                    </div>
-                    <div class="beritaku-title">
-                      <h4 class="truncate-3">Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit AmetDolor Sit AmetDolor Sit Amet</h4>
-                      <div class="share-group beritaku row no-margin">
-                        <!-- Facebook Share Button -->
-                        <a class="btnz share facebook" href="#"><i class="fa fa-facebook"></i></a>
-                        <!-- Googple Plus Share Button -->
-                        <a class="btnz share gplus" href="#"><i class="fa fa-google-plus"></i></a>
-                        <!-- Twitter Share Button -->
-                        <a class="btnz share twitter" href="#"><i class="fa fa-twitter"></i></a>
-                        <!-- Pinterest Share Button -->
-                        <a class="btnz share pinterest" href="#"><i class="fa fa-pinterest"></i></a>
-                        <!-- LinkedIn Share Button -->
-                        <a class="btnz share linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-                      </div>
-                      <p class="grey time-beritaku"><i class="fa fa-clock-o"></i> 12 February 2016</p>
-                    </div>
-                  </div>
-                </a>
+              <div id="news-list" class="row">
+                <%= render 'home/ajax/news_list_item' %>
               </div>
             </div>
           </div>
 
-          <div class="col-md-4 col-sm-12 col-xs-12 latest-news">
-            <div class="latest-header investasiku-bg-color">
-              <h4 class=white>Latest News</h4>
-            </div>
-
-            <div class="front-beritaku-small border-bottom">
-              <a href="#" class="sect-child row no-margin">
-                <!-- <hr> -->
-                <div class="beritaku-wrapper">
-                  <%= image_tag 'tax.jpg', :class => 'imej' %>
-                </div>
-                <div class="headline-small-sect">
-                  <h5 class="investasiku-color">Lorem Ipsum dolor sit ametLorem Ipsum dolor sit amet</h5>
-                  <p class="font-12 grey"><i class="fa fa-clock-o" aria-hidden="true"></i>  25th February 2016</p>
-                </div>
-              </a>
-            </div>
-
-            <div class="front-beritaku-small border-bottom">
-              <a href="#" class="sect-child row no-margin">
-                <!-- <hr> -->
-                <div class="beritaku-wrapper">
-                  <%= image_tag 'tax.jpg', :class => 'imej' %>
-                </div>
-                <div class="headline-small-sect">
-                  <h5 class="investasiku-color">Lorem Ipsum dolor sit ametLorem Ipsum dolor sit amet</h5>
-                  <p class="font-12 grey"><i class="fa fa-clock-o" aria-hidden="true"></i>  25th February 2016</p>
-                </div>
-              </a>
-            </div>
-
-            <div class="front-beritaku-small border-bottom">
-              <a href="#" class="sect-child row no-margin">
-                <!-- <hr> -->
-                <div class="beritaku-wrapper">
-                  <%= image_tag 'tax.jpg', :class => 'imej' %>
-                </div>
-                <div class="headline-small-sect">
-                  <h5 class="investasiku-color">Lorem Ipsum dolor sit ametLorem Ipsum dolor sit amet</h5>
-                  <p class="font-12 grey"><i class="fa fa-clock-o" aria-hidden="true"></i>  25th February 2016</p>
-                </div>
-              </a>
-            </div>
-
-            <div class="front-beritaku-small border-bottom">
-              <a href="#" class="sect-child row no-margin">
-                <!-- <hr> -->
-                <div class="beritaku-wrapper">
-                  <%= image_tag 'tax.jpg', :class => 'imej' %>
-                </div>
-                <div class="headline-small-sect">
-                  <h5 class="investasiku-color">Lorem Ipsum dolor sit ametLorem Ipsum dolor sit amet</h5>
-                  <p class="font-12 grey"><i class="fa fa-clock-o" aria-hidden="true"></i>  25th February 2016</p>
-                </div>
-              </a>
-            </div>
-          </div>
+          <%= render 'home/shared/latest_news_side' %>
         </div>
       </div>
     </div>

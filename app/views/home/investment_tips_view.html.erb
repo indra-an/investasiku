@@ -1,0 +1,36 @@
+<div class="news-details">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-xs-12 news-content">
+            <ol class="breadcrumb transparent no-padding">
+              <li class="breadcrumb-item"><%= link_to 'Home', root_path %></li>
+              <li class="breadcrumb-item active">Tips &amp; Trick</li>
+            </ol>
+            <h3 class="investasiku-color"><%= @tip.title %></h3>
+            <div class="time-publish"><p class="grey"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<%= l @tip.created_at %>&nbsp;</p></div>
+
+            <%= raw @tip.content %>
+
+            <p class="grey font-12">Posted by <b class="investasiku-color"><%= @tip.custom_posted_by || @tip.posted_by.full_name %></b></p>
+
+            <div class="share-group row no-margin">
+              <a class="btnz share facebook" href="#"><i class="fa fa-facebook"></i> Share</a>
+              <a class="btnz share gplus" href="#"><i class="fa fa-google-plus"></i> Share</a>
+              <a class="btnz share twitter" href="#"><i class="fa fa-twitter"></i> Tweet</a>
+              <a class="btnz share stumbleupon" href="#"><i class="fa fa-stumbleupon"></i> Stumble</a>
+              <a class="btnz share pinterest" href="#"><i class="fa fa-pinterest"></i> Pin it</a>
+              <a class="btnz share linkedin" href="#"><i class="fa fa-linkedin"></i> LinkedIn</a>
+              <a class="btnz share buffer" href="#"><i class="fa fa-share-square-o"></i> Buffer</a>
+            </div>
+          </div>
+
+          <%= render 'home/shared/latest_news_side' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ad-sense"></div>

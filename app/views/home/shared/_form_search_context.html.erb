@@ -1,0 +1,10 @@
+<div class="col-md-6 no-padding">
+  <%= form_tag route, :method => :get, :remote => true, :id => 'form-search-context' do %>
+    <div class="input-group">
+      <%= text_field_tag :query, '', :placeholder => placeholder, :class => 'form-control invest-rad-30' %>
+      <span class="input-group-btn">
+        <button class="btn btn-default invest-rad-30" type="button"><i class="fa fa-search"></i></button>
+      </span>
+    </div>
+  <% end %>
+</div>

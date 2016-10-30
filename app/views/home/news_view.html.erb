@@ -1,37 +1,27 @@
 <div class="news-details">
   <div class="container-fluid">
     <div class="row">
-      <div class="news-cover" style="background: url(<%= image_url('tax.jpg') %>);">
+      <div class="news-cover" style="background: url(<%= @news.image_url || image_url('tax.jpg') %>);">
       </div>
 
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-xs-12 news-content">
             <ol class="breadcrumb transparent no-padding">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><%= link_to 'Home', root_path %></li>
               <li class="breadcrumb-item active">Beritaku</li>
             </ol>
-            <h3 class="investasiku-color">Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet</h3>
-            <div class="time-publish"><p class="grey"><i class="fa fa-clock-o" aria-hidden="true"></i>  25th February 2016 </p></div>
+            <h3 class="investasiku-color"><%= @news.title %></h3>
+            <div class="time-publish"><p class="grey"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<%= l @news.created_at %>&nbsp;</p></div>
             <div class="tag-group">
-              <!-- <h5>Tags</h5> -->
-              <a href="" class="news-type investasiku-bg">Business</a>
-              <a href="" class="news-type investasiku-bg">Business</a>
-              <a href="" class="news-type investasiku-bg">Business</a>
-              <a href="" class="news-type investasiku-bg">Business</a>
-              <a href="" class="news-type investasiku-bg">Business</a>
-              <a href="" class="news-type investasiku-bg">Business</a>
-            </div>
-            <p class="text-justify">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit.</p>
-
-            <div class="image-content">
-              <%= image_tag 'tax.jpg', :class => 'no-margin' %>
-              <p class="grey img-det">Lorem ipsum</p>
+              <% @news.tags.each do |tag| %>
+                <%= link_to tag.name, public_news_path + '?tag=' + tag.name, :class => 'news-type investasiku-bg' %>
+              <% end %>
             </div>
 
-            <p class="text-justify">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit.</p>
+            <%= raw @news.content %>
 
-            <p class="grey font-12">Posted by <b class="investasiku-color">John Doe</b></p>
+            <p class="grey font-12">Posted by <b class="investasiku-color"><%= @news.custom_posted_by || @news.posted_by.full_name %></b></p>
 
             <div class="share-group row no-margin">
               <!-- Facebook Share Button -->
@@ -51,118 +41,36 @@
             </div>
           </div>
 
-          <div class="col-md-4 col-xs-12 latest-news">
-            <div class="latest-header investasiku-bg-color">
-              <h4 class=white>Latest News</h4>
-            </div>
-
-            <div class="front-beritaku-small border-bottom">
-              <a href="#" class="sect-child row no-margin">
-                <!-- <hr> -->
-                <div class="beritaku-wrapper">
-                  <%= image_tag 'tax.jpg', :class => 'imej' %>
-                </div>
-                <div class="headline-small-sect">
-                  <h5 class="investasiku-color">Lorem Ipsum dolor sit ametLorem Ipsum dolor sit amet</h5>
-                  <p class="font-12 grey"><i class="fa fa-clock-o" aria-hidden="true"></i>  25th February 2016</p>
-                </div>
-              </a>
-            </div>
-
-            <div class="front-beritaku-small border-bottom">
-              <a href="#" class="sect-child row no-margin">
-                <!-- <hr> -->
-                <div class="beritaku-wrapper">
-                  <%= image_tag 'tax.jpg', :class => 'imej' %>
-                </div>
-                <div class="headline-small-sect">
-                  <h5 class="investasiku-color">Lorem Ipsum dolor sit ametLorem Ipsum dolor sit amet</h5>
-                  <p class="font-12 grey"><i class="fa fa-clock-o" aria-hidden="true"></i>  25th February 2016</p>
-                </div>
-              </a>
-            </div>
-
-            <div class="front-beritaku-small border-bottom">
-              <a href="#" class="sect-child row no-margin">
-                <!-- <hr> -->
-                <div class="beritaku-wrapper">
-                  <%= image_tag 'tax.jpg', :class => 'imej' %>
-                </div>
-                <div class="headline-small-sect">
-                  <h5 class="investasiku-color">Lorem Ipsum dolor sit ametLorem Ipsum dolor sit amet</h5>
-                  <p class="font-12 grey"><i class="fa fa-clock-o" aria-hidden="true"></i>  25th February 2016</p>
-                </div>
-              </a>
-            </div>
-
-            <div class="front-beritaku-small border-bottom">
-              <a href="#" class="sect-child row no-margin">
-                <!-- <hr> -->
-                <div class="beritaku-wrapper">
-                  <%= image_tag 'tax.jpg', :class => 'imej' %>
-                </div>
-                <div class="headline-small-sect">
-                  <h5 class="investasiku-color">Lorem Ipsum dolor sit ametLorem Ipsum dolor sit amet</h5>
-                  <p class="font-12 grey"><i class="fa fa-clock-o" aria-hidden="true"></i>  25th February 2016</p>
-                </div>
-              </a>
-            </div>
-          </div>
-
+          <%= render 'home/shared/latest_news_side' %>
         </div>
       </div>
 
-      <div class="container-fluid related-news hidden-xs">
-        <h4 class="related-header">Related news</h4>
-        <div class="row">
-          <div class="col-md-12 col-sm-12 border-top x-hidden">
-            <div class="inner-container">
-              <div class="related front-beritaku-small border-right col-md-4 col-sm-4 col-xs-12">
-                <a href="#" class="sect-child row no-margin">
-                  <!-- <hr> -->
-                  <div class="beritaku-wrapper">
-                    <%= image_tag 'tax.jpg', :class => 'imej' %>
+      <% unless @related.blank? %>
+        <div class="container-fluid related-news hidden-xs">
+          <h4 class="related-header">Related news</h4>
+          <div class="row">
+            <div class="col-md-12 col-sm-12 border-top x-hidden">
+              <div class="inner-container">
+                <% @related.each do |news| %>
+                  <div class="related front-beritaku-small border-right col-md-4 col-sm-4 col-xs-12">
+                    <%= link_to public_news_path(news.slug), :class => 'sect-child row no-margin' do %>
+                      <div class="beritaku-wrapper">
+                        <%= image_tag news.image_url || 'tax.jpg', :class => 'imej' %>
+                      </div>
+                      <div class="headline-small-sect">
+                        <h5 class="investasiku-color truncate-3"><%= news.title %></h5>
+                        <p class="font-12 grey"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<%= l news.created_at %></p>
+                      </div>
+                    <% end %>
                   </div>
-                  <div class="headline-small-sect">
-                    <h5 class="investasiku-color truncate-3">Lorem Ipsum dolor sit ametLorem Ipsum dolor sit amet</h5>
-                    <p class="font-12 grey"><i class="fa fa-clock-o" aria-hidden="true"></i>  25th February 2016</p>
-                  </div>
-                </a>
-              </div>
-
-              <div class="related front-beritaku-small border-right col-md-4 col-sm-4 col-xs-12">
-                <a href="#" class="sect-child row no-margin">
-                  <!-- <hr> -->
-                  <div class="beritaku-wrapper">
-                    <%= image_tag 'tax.jpg', :class => 'imej' %>
-                  </div>
-                  <div class="headline-small-sect">
-                    <h5 class="investasiku-color truncate-3">Lorem Ipsum dolor sit ametLorem Ipsum dolor sit amet</h5>
-                    <p class="font-12 grey"><i class="fa fa-clock-o" aria-hidden="true"></i>  25th February 2016</p>
-                  </div>
-                </a>
-              </div>
-
-              <div class="related front-beritaku-small border-right col-md-4 col-sm-4 col-xs-12">
-                <a href="#" class="sect-child row no-margin">
-                  <!-- <hr> -->
-                  <div class="beritaku-wrapper">
-                    <%= image_tag 'tax.jpg', :class => 'imej' %>
-                  </div>
-                  <div class="headline-small-sect">
-                    <h5 class="investasiku-color truncate-3">Lorem Ipsum dolor sit ametLorem Ipsum dolor sit amet</h5>
-                    <p class="font-12 grey"><i class="fa fa-clock-o" aria-hidden="true"></i>  25th February 2016</p>
-                  </div>
-                </a>
+                <% end %>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
+      <% end %>
     </div>
   </div>
-
 </div>
 
 <div class="ad-sense"></div>
