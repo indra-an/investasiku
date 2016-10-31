@@ -23,22 +23,10 @@
 
             <p class="grey font-12">Posted by <b class="investasiku-color"><%= @news.custom_posted_by || @news.posted_by.full_name %></b></p>
 
-            <div class="share-group row no-margin">
-              <!-- Facebook Share Button -->
-              <a class="btnz share facebook" href="#"><i class="fa fa-facebook"></i> Share</a>
-              <!-- Googple Plus Share Button -->
-              <a class="btnz share gplus" href="#"><i class="fa fa-google-plus"></i> Share</a>
-              <!-- Twitter Share Button -->
-              <a class="btnz share twitter" href="#"><i class="fa fa-twitter"></i> Tweet</a>
-              <!-- Stumbleupon Share Button -->
-              <a class="btnz share stumbleupon" href="#"><i class="fa fa-stumbleupon"></i> Stumble</a>
-              <!-- Pinterest Share Button -->
-              <a class="btnz share pinterest" href="#"><i class="fa fa-pinterest"></i> Pin it</a>
-              <!-- LinkedIn Share Button -->
-              <a class="btnz share linkedin" href="#"><i class="fa fa-linkedin"></i> LinkedIn</a>
-              <!-- Buffer Share Button -->
-              <a class="btnz share buffer" href="#"><i class="fa fa-share-square-o"></i> Buffer</a>
-            </div>
+            <%= render :partial => 'home/shared/share_buttons', :locals => { :minimal => false,
+                                                                             :title => @news.title,
+                                                                             :url => public_news_view_url(@news.slug),
+                                                                             :image => @news.image_url } %>
           </div>
 
           <%= render 'home/shared/latest_news_side' %>

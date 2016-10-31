@@ -4,7 +4,10 @@
 //= require public/modernizr.custom
 //= require public/classie
 //= require public/uisearch
+//= require public/social-share
 //= require turbolinks
+
+initailizeSocialShare();
 
 if(window.should_disable_scroll_inspector == undefined) {
   window.should_disable_scroll_inspector = true;

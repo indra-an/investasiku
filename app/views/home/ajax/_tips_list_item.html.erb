@@ -7,15 +7,10 @@
         <h4 class="investasiku-color"><%= tip.title %></h4>
         <p class="truncate-6"><%= strip_tags(tip.content) %></p>
       <% end %>
-      <div class="share-group row no-margin">
-        <a class="btnz share facebook" href="#"><i class="fa fa-facebook"></i> Share</a>
-        <a class="btnz share gplus" href="#"><i class="fa fa-google-plus"></i> Share</a>
-        <a class="btnz share twitter" href="#"><i class="fa fa-twitter"></i> Tweet</a>
-        <a class="btnz share stumbleupon" href="#"><i class="fa fa-stumbleupon"></i> Stumble</a>
-        <a class="btnz share pinterest" href="#"><i class="fa fa-pinterest"></i> Pin it</a>
-        <a class="btnz share linkedin" href="#"><i class="fa fa-linkedin"></i> LinkedIn</a>
-        <a class="btnz share buffer" href="#"><i class="fa fa-share-square-o"></i> Buffer</a>
-      </div>
+      <%= render :partial => 'home/shared/share_buttons', :locals => { :minimal => false,
+                                                                       :title => tip.title,
+                                                                       :url => public_tips_view_url(tip.slug),
+                                                                       :image => image_url('logo_color.png') } %>
     </div>
   <% end %>
 <% end %>

@@ -7,18 +7,10 @@
         <div class="wrapper-thumbnail" style="background: url(<%= news.image_url || image_url('tax.jpg') %>); background-size:cover; background-position:center"></div>
         <div class="beritaku-title">
           <h4><%= news.title %></h4>
-          <div class="share-group beritaku row no-margin">
-            <!-- Facebook Share Button -->
-            <a class="btnz share facebook" href="#"><i class="fa fa-facebook"></i></a>
-            <!-- Googple Plus Share Button -->
-            <a class="btnz share gplus" href="#"><i class="fa fa-google-plus"></i></a>
-            <!-- Twitter Share Button -->
-            <a class="btnz share twitter" href="#"><i class="fa fa-twitter"></i></a>
-            <!-- Pinterest Share Button -->
-            <a class="btnz share pinterest" href="#"><i class="fa fa-pinterest"></i></a>
-            <!-- LinkedIn Share Button -->
-            <a class="btnz share linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-          </div>
+          <%= render :partial => 'home/shared/share_buttons', :locals => { :minimal => true,
+                                                                           :title => news.title,
+                                                                           :url => public_news_view_url(news.slug),
+                                                                           :image => news.image_url } %>
           <p class="grey time-beritaku"><i class="fa fa-clock-o"></i>&nbsp;<%= l news.created_at %></p>
         </div>
       </div>
