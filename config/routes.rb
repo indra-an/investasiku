@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     get 'dashboard' => 'dashboard#index'
     get 'preferences' => 'dashboard#preferences'
 
+    post 'preferences' => 'dashboard#save_preferences'
+
     put 'update_full_name' => 'dashboard#update_full_name'
     put 'update_password' => 'dashboard#update_password'
 

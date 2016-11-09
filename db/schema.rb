@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161030094216) do
+ActiveRecord::Schema.define(version: 20161109003853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -113,6 +113,28 @@ ActiveRecord::Schema.define(version: 20161030094216) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "preferences", force: :cascade do |t|
+    t.string   "facebook_link"
+    t.string   "twitter_link"
+    t.string   "instagram_link"
+    t.text     "banner_ad_script"
+    t.text     "sidebar_ad_script"
+    t.integer  "news_id"
+    t.integer  "module_step_1_id"
+    t.integer  "module_step_2_id"
+    t.integer  "module_step_3_id"
+    t.integer  "module_step_4_id"
+    t.integer  "module_step_5_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["module_step_1_id"], name: "index_preferences_on_module_step_1_id", using: :btree
+    t.index ["module_step_2_id"], name: "index_preferences_on_module_step_2_id", using: :btree
+    t.index ["module_step_3_id"], name: "index_preferences_on_module_step_3_id", using: :btree
+    t.index ["module_step_4_id"], name: "index_preferences_on_module_step_4_id", using: :btree
+    t.index ["module_step_5_id"], name: "index_preferences_on_module_step_5_id", using: :btree
+    t.index ["news_id"], name: "index_preferences_on_news_id", using: :btree
+  end
+
   create_table "tags", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -152,4 +174,5 @@ ActiveRecord::Schema.define(version: 20161030094216) do
 
   add_foreign_key "news_tags", "news"
   add_foreign_key "news_tags", "tags"
+  add_foreign_key "preferences", "news"
 end

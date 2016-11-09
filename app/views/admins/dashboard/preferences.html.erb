@@ -15,7 +15,104 @@
   <div class="col-lg-12">
     <div class="panel panel-default">
       <div class="panel-body">
-        <h1>Test</h1>
+        <%= form_tag admins_preferences_path, :class => 'form-horizontal' do %>
+          <% if @preference.errors.any? %>
+            <div class="alert alert-danger" role="alert">
+              <strong>Ops! <%= pluralize(@preference.errors.count, "error") %> found:</strong><br/>
+              <ul>
+                <% @preference.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="form-group">
+            <%= label_tag :facebook_link, 'Facebook Link', :class => 'col-sm-3 control-label' %>
+            <div class="col-sm-9">
+              <%= text_field_tag :facebook_link, @preference.facebook_link, :class => 'form-control' %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :twitter_link, 'Twitter Link', :class => 'col-sm-3 control-label' %>
+            <div class="col-sm-9">
+              <%= text_field_tag :twitter_link, @preference.twitter_link, :class => 'form-control' %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :instagram_link, 'Instagram Link', :class => 'col-sm-3 control-label' %>
+            <div class="col-sm-9">
+              <%= text_field_tag :instagram_link, @preference.instagram_link, :class => 'form-control' %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :banner_ad_script, 'Banner Ad Script', :class => 'col-sm-3 control-label' %>
+            <div class="col-sm-9">
+              <%= text_area_tag :banner_ad_script, @preference.banner_ad_script, :class => 'form-control', :rows => 7 %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :sidebar_ad_script, 'Sidebar Ad Script', :class => 'col-sm-3 control-label' %>
+            <div class="col-sm-9">
+              <%= text_area_tag :sidebar_ad_script, @preference.sidebar_ad_script, :class => 'form-control', :rows => 7 %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :news, 'Beritaku Home', :class => 'col-sm-3 control-label' %>
+            <div class="col-sm-9">
+              <%= select_tag :news, options_for_select(@news, @news_selected), :multiple => false, :class => 'chosen' %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :module_step_1, 'Learning Module Step 1', :class => 'col-sm-3 control-label' %>
+            <div class="col-sm-9">
+              <%= select_tag :module_step_1, options_for_select(@learning_modules, @module_selected_1), :multiple => false, :class => 'chosen' %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :module_step_2, 'Learning Module Step 2', :class => 'col-sm-3 control-label' %>
+            <div class="col-sm-9">
+              <%= select_tag :module_step_2, options_for_select(@learning_modules, @module_selected_2), :multiple => false, :class => 'chosen' %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :module_step_3, 'Learning Module Step 3', :class => 'col-sm-3 control-label' %>
+            <div class="col-sm-9">
+              <%= select_tag :module_step_3, options_for_select(@learning_modules, @module_selected_3), :multiple => false, :class => 'chosen' %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :module_step_4, 'Learning Module Step 4', :class => 'col-sm-3 control-label' %>
+            <div class="col-sm-9">
+              <%= select_tag :module_step_4, options_for_select(@learning_modules, @module_selected_4), :multiple => false, :class => 'chosen' %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :module_step_5, 'Learning Module Step 5', :class => 'col-sm-3 control-label' %>
+            <div class="col-sm-9">
+              <%= select_tag :module_step_5, options_for_select(@learning_modules, @module_selected_5), :multiple => false, :class => 'chosen' %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 text-right">
+              <%= link_to 'Discard', admins_preferences_path, :class => 'btn btn-warning' %>
+            </div>
+            <div class="col-md-6 text-left">
+              <%= submit_tag 'Save', :class => 'btn btn-primary' %>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

@@ -12,6 +12,30 @@ class Admins::DashboardController < Admins::BaseController
   end
 
   def preferences
+    @preference = Preference.fetch || Preference.new
+    set_preference_attributes
+  end
+
+  def save_preferences
+    @preference = Preference.fetch || Preference.new
+    @preference.facebook_link = params[:facebook_link]
+    @preference.twitter_link = params[:twitter_link]
+    @preference.instagram_link = params[:instagram_link]
+    @preference.banner_ad_script = params[:banner_ad_script]
+    @preference.sidebar_ad_script = params[:sidebar_ad_script]
+    @preference.news_id = params[:news]
+    @preference.module_step_1_id = params[:module_step_1]
+    @preference.module_step_2_id = params[:module_step_2]
+    @preference.module_step_3_id = params[:module_step_3]
+    @preference.module_step_4_id = params[:module_step_4]
+    @preference.module_step_5_id = params[:module_step_5]
+
+    if @preference.save
+      redirect_to admins_preferences_path, notice: 'Website preferences saved.'
+    else
+      set_preference_attributes
+      render :preferences
+    end
   end
 
   def update_full_name
@@ -26,4 +50,18 @@ class Admins::DashboardController < Admins::BaseController
     @status = current_admin.save
     @error_message = current_admin.errors.first.join(' ').titleize unless @status
   end
+
+  private
+
+    def set_preference_attributes
+      @news = News.select(:id, :title).collect { |news| [news.title, news.id] }
+      @learning_modules = LearningModule.select(:id, :title).collect { |mod| [mod.title, mod.id] }
+      @news_selected = [@preference.news.title, @preference.news.id] rescue nil
+      @module_selected = []
+
+      5.times do |i|
+        mod = eval("@preference.module_step_#{i + 1}")
+        @module_selected << mod.nil? ? nil : [mod.title, mod.id]
+      end
+    end
 end

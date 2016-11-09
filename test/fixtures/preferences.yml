@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  facebook_link: MyString
+  twitter_link: MyString
+  instagram_link: MyString
+  banner_ad_script: MyText
+  sidebar_ad_script: MyText
+  news: one
+  module_step_1: one
+  module_step_2: one
+  module_step_3: one
+  module_step_4: one
+  module_step_5: one
+
+two:
+  facebook_link: MyString
+  twitter_link: MyString
+  instagram_link: MyString
+  banner_ad_script: MyText
+  sidebar_ad_script: MyText
+  news: two
+  module_step_1: two
+  module_step_2: two
+  module_step_3: two
+  module_step_4: two
+  module_step_5: two
