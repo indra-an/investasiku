@@ -1,7 +1,12 @@
 class HomeController < ApplicationController
+  before_action :set_preference
   before_action :set_latest_news, :except => [:index, :learning_module, :perform_search]
 
   def index
+    @hot_news = @preference.news || News.last|| News.new
+    @news = News.order(:created_at => :desc).limit(4)
+    @tips = InvestmentTip.order(:created_at => :desc).limit(3)
+    @glossaries = Glosarry.order(:created_at => :desc).limit(3)
   end
 
   def my_news
@@ -42,5 +47,9 @@ class HomeController < ApplicationController
 
     def set_latest_news
       @latest_news = News.order(:created_at => :desc).limit(4)
+    end
+
+    def set_preference
+      @preference = Preference.fetch || Preference.new
     end
 end

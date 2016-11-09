@@ -1,0 +1,19 @@
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
+  <div class="panel panel-learning">
+    <div class="panel-heading top investasiku-bg" role="tab" id="heading<%= step_num %>">
+      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= step_num %>" aria-expanded="true" aria-controls="collapse<%= step_num %>" class="panel-title ">
+        <%= image_tag icon_url %>
+        <h4 class="white">Step <%= step_num %> : <%= mod.title %></h4>
+      </a>
+    </div>
+    <div id="collapse<%= step_num %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<%= step_num %>">
+      <div class="panel-body caller">
+        <p><%= raw mod.content %></p>
+        <%= render :partial => 'home/shared/share_buttons', :locals => { :minimal => false,
+                                                                         :title => mod.title,
+                                                                         :url => public_module_path,
+                                                                         :image => icon_url } %>
+      </div>
+    </div>
+  </div>
+</div>

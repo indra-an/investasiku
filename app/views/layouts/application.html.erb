@@ -68,9 +68,15 @@
             </div>
 
             <div class=" col-md-4 col-sm-12 col-xs-12 latest">
-              <a href="" class="dark-grey"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-              <a href="" class="dark-grey"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-              <a href="" class="dark-grey"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+              <%= link_to @preference.facebook_link, :class => 'dark-grey' do %>
+                <i class="fa fa-facebook-official" aria-hidden="true"></i>
+              <% end %>
+              <%= link_to @preference.twitter_link, :class => 'dark-grey' do %>
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              <% end %>
+              <%= link_to @preference.instagram_link, :class => 'dark-grey' do %>
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              <% end %>
             </div>
           </div>
         </div>
