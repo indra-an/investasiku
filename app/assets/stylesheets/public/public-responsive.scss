@@ -49,6 +49,14 @@
 		bottom: inherit !important;
 	}
 
+	.white-opacity {
+		display: block;
+	}
+
+	.navbar-header.navbar-fixed-top {
+    background: rgba(255,255,255,0.9);
+}
+
 .footer {
 	text-align: center;
 }
@@ -148,5 +156,27 @@
 		margin-left: 0;
 		margin-bottom: 25px;
 	}
-	
+	.learning-accord {
+    list-style: none;
+    padding: 0 25px;
+}
+
+.learning-accord a h4 {
+    width: 80%;
+    margin-bottom: -10pxxx;
+}
+
+.learning-accord a img {
+    margin-top: -25px;
+}
+
+video.video-stream.html5-main-video {
+    width: 100% !important;
+    height: auto !important;
+}
+
+iframe {
+    width: 100% !important;
+}
+
 }
