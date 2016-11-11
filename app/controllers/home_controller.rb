@@ -1,6 +1,8 @@
 class HomeController < ApplicationController
   before_action :set_preference
   before_action :set_latest_news, :except => [:index, :learning_module, :perform_search]
+  before_action :set_banner_ad, :only => [:index, :learning_module]
+  before_action :set_rectangle_ad, :except => [:index, :learning_module]
 
   def index
     @hot_news = @preference.news || News.last|| News.new
@@ -51,5 +53,13 @@ class HomeController < ApplicationController
 
     def set_preference
       @preference = Preference.fetch || Preference.new
+    end
+
+    def set_banner_ad
+      @ad_code = @preference.banner_ad_script
+    end
+
+    def set_rectangle_ad
+      @ad_code = @preference.sidebar_ad_script
     end
 end
