@@ -8,6 +8,7 @@
 //= require public/social-share
 //= require turbolinks
 
+ahoy.trackAll();
 initailizeSocialShare();
 
 if(window.should_disable_scroll_inspector == undefined) {
@@ -19,8 +20,6 @@ $(document).on("turbolinks:click", function() {
 });
 
 $(document).on("turbolinks:load", function() {
-  ahoy.trackAll();
-
   new UISearch(document.getElementById("sb-search"));
 
   $(window).scroll(function() {

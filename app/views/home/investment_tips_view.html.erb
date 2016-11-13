@@ -1,3 +1,10 @@
+<%
+  striped_tags = strip_tags(@tip.content)
+  set_meta_tags title: 'Investasiku', site: @tip.title
+  set_meta_tags description: truncate(striped_tags, :length => 160)
+  set_meta_tags keywords: generate_keywords_from(striped_tags)
+%>
+
 <div class="news-details invesment-view">
   <div class="container-fluid">
     <div class="row">

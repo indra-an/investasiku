@@ -5,14 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
-
-    <title>Investasiku</title>
+    <%= display_meta_tags site: 'Investasiku' %>
 
     <%= stylesheet_link_tag 'application', :media => 'all', 'data-turbolinks-track' => 'reload' %>
     <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Raleway|Roboto+Slab' %>
   </head>
 
   <body class="front-bg">
+    <%
+      set_meta_tags icon: [
+        { href: 'icon_96.png', sizes: '32x32 96x96', type: 'image/png' },
+        { href: 'icon_itouch_precomp_32.png', rel: 'apple-touch-icon-precomposed', sizes: '32x32', type: 'image/png' },
+      ]
+      set_meta_tags author: @preference.facebook_link
+      set_meta_tags publisher: @preference.facebook_link
+      set_meta_tags image_src: "http://yoursite.com/icons/icon_32.png"
+    %>
+
     <div class="navbar-header navbar-fixed-top transparent <%= navbar_class_for_action %>">
       <button data-toggle="collapse-side" data-target=".side-collapse" data-target-2=".side-collapse-container" type="button" class="navbar-toggle pull-left"><i class="fa fa-bars mobile" aria-hidden="true"></i></button>
     </div>

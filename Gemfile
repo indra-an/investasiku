@@ -18,6 +18,8 @@ gem 'mini_magick'
 gem 'ahoy_matey'
 gem 'groupdate'
 gem 'kaminari'
+gem 'meta-tags'
+gem 'words_counted'
 
 group :development, :test do
   gem 'byebug', platform: :mri

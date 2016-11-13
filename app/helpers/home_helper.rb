@@ -7,4 +7,14 @@ module HomeHelper
     return nil if url.blank?
     URI::join(root_url, url).to_s
   end
+
+  def generate_keywords_from(content)
+    result = ['investasiku', 'investasi', 'belajar']
+    counter = WordsCounted.count(content).token_frequency
+    counter.each do |word|
+      break if result.count.eql?(20)
+      result << word[0]
+    end
+    result
+  end
 end
