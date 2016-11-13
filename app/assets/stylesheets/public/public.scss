@@ -430,8 +430,6 @@ box-shadow: 0px 2px 16px -1px rgba(0,0,0,0.1);
 
 .hot.top-beritaku .dark-bg .section-badge, .hot.top-investment .section-badge {
   font-size: 12px;
-  top: 15px;
-  right: 20px;
 }
 
 .hot.top-beritaku .dark-bg {
@@ -1204,16 +1202,6 @@ li.breadcrumb-item a {
 }
 
 
-
-
-@media screen and (min-color-index:0) and (-webkit-min-device-pixel-ratio:0) {
-  .input-password, .input-email {
-      padding: 7px 15px;
-  }
-}
-
-
-
 @media (max-width: 667px) {
 
 .sorting-people {
@@ -1249,6 +1237,10 @@ li.breadcrumb-item a {
 }
 }
 
+.news-content p iframe {
+    width: 100%;
+}
+
 .profile-search .img-wrapper .bg-dark-overlay {
     padding-top: 100px;
     opacity: 1;
@@ -1266,4 +1258,33 @@ li.breadcrumb-item a {
 
 .learning-accord a img, .learning-accord a h4 {
     display: inline-block;
+}
+
+.hot.top-beritaku {
+    position: relative;
+    padding: 15px 35px;
+}
+
+.section-badge.tema {
+  padding: 5px 25px;
+  border-radius: 30px;
+  color: white;
+  float: left;
+  clear: both;
+  position: inherit;
+  text-align: center;
+}
+
+.split-width {
+  width: 100%;
+  clear: both;
+}
+
+.hot {
+    padding-top: 25% !important;
+}
+
+.ad-sense {
+  display: block;
+  margin-bottom: 50px;
 }

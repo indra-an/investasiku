@@ -1,5 +1,6 @@
 //= require jquery
 //= require jquery_ujs
+//= require ahoy
 //= require public/bootstrap.min
 //= require public/modernizr.custom
 //= require public/classie
@@ -18,6 +19,8 @@ $(document).on("turbolinks:click", function() {
 });
 
 $(document).on("turbolinks:load", function() {
+  ahoy.trackAll();
+
   new UISearch(document.getElementById("sb-search"));
 
   $(window).scroll(function() {

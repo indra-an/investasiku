@@ -1,6 +1,6 @@
 var templates = {
   facebook: 'https://www.facebook.com/sharer.php?s=100&p[title]={title}&u={url}&t={title}&p[summary]={text}&p[url]={url}',
-  plus: 'https://plus.google.com/share?url={url}',
+  gplus: 'https://plus.google.com/share?url={url}',
   twitter: 'https://twitter.com/intent/tweet?url={url}&text={text}',
   stumbleupon: 'https://www.stumbleupon.com/submit?url={url}&title={title}',
   pinterest: 'https://www.pinterest.com/pin/create/button/?media={image}&url={url}&description={text}',
