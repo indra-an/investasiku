@@ -19,7 +19,7 @@ gem 'groupdate'
 gem 'kaminari'
 gem 'meta-tags'
 gem 'words_counted'
-gem 'yui-compressor'
+gem 'closure-compiler'
 gem 'cloudinary'
 
 group :development, :test do
