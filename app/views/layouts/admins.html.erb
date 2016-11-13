@@ -55,48 +55,48 @@
         </div>
       </form>
       <ul class="nav menu">
-        <li class="<%= class_for_sidebar(:dashboard, :index) %>">
+        <li class="<%= class_for_content_indicator(:dashboard, :index) %>">
           <%= link_to admins_dashboard_path do %>
             <span class="glyphicon glyphicon-dashboard"></span>&nbsp;Dashboard
           <% end %>
         </li>
-        <li class="<%= class_for_sidebar(:news) %>">
+        <li class="<%= class_for_content_indicator(:news) %>">
           <%= link_to admins_news_index_path do %>
             <span class="glyphicon glyphicon-asterisk"></span>&nbsp;News
           <% end %>
         </li>
-        <li class="<%= class_for_sidebar(:glosarries) %>">
+        <li class="<%= class_for_content_indicator(:glosarries) %>">
           <%= link_to admins_glosarries_path do %>
             <span class="glyphicon glyphicon-book"></span>&nbsp;Glossaries
           <% end %>
         </li>
-        <li class="<%= class_for_sidebar(:tags) %>">
+        <li class="<%= class_for_content_indicator(:tags) %>">
           <%= link_to admins_tags_path do %>
             <span class="glyphicon glyphicon-tags"></span>&nbsp;Tags
           <% end %>
         </li>
-        <li class="<%= class_for_sidebar(:investment_tips) %>">
+        <li class="<%= class_for_content_indicator(:investment_tips) %>">
           <%= link_to admins_investment_tips_path do %>
             <span class="glyphicon glyphicon-blackboard"></span>&nbsp;Investment Tips
           <% end %>
         </li>
-        <li class="<%= class_for_sidebar(:learning_modules) %>">
+        <li class="<%= class_for_content_indicator(:learning_modules) %>">
           <%= link_to admins_learning_modules_path do %>
             <span class="glyphicon glyphicon-modal-window"></span>&nbsp;Learning Modules
           <% end %>
         </li>
-        <li class="<%= class_for_sidebar(:newsletter_queues) %>">
+        <li class="<%= class_for_content_indicator(:newsletter_queues) %>">
           <%= link_to admins_newsletter_queues_path do %>
             <span class="glyphicon glyphicon-send"></span>&nbsp;Newsletter Queues
           <% end %>
         </li>
         <li role="presentation" class="divider"></li>
-        <li class="<%= class_for_sidebar(:admins) %>">
+        <li class="<%= class_for_content_indicator(:admins) %>">
           <%= link_to admins_admins_path do %>
             <span class="glyphicon glyphicon-user"></span>&nbsp;Admin Accounts
           <% end %>
         </li>
-        <li class="<%= class_for_sidebar(:dashboard, :preferences) %>">
+        <li class="<%= class_for_content_indicator(:dashboard, :preferences) %>">
           <%= link_to admins_preferences_path do %>
             <span class="glyphicon glyphicon-wrench"></span>&nbsp;Preferences
           <% end %>
