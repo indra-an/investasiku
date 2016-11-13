@@ -1,4 +1,7 @@
 /*
+ *= require chosen/chosen.min
+ *= require public/bootstrap.min
+ *= require_self
 Lumino Admin Bootstrap Template
 Version 1.0
 */

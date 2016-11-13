@@ -1,9 +1,13 @@
+//= require jquery
 //= require jquery_ujs
 //= require Chart.bundle
 //= require chartkick
 //= require ahoy
+//= require chosen/chosen.jquery.min
+//= require public/bootstrap.min
 //= require ckeditor/init
 //= require turbolinks
+//= require_self
 
 $(document).on('turbolinks:load', function() {
   // reattach callback
