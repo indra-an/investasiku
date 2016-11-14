@@ -14,6 +14,7 @@ pickle-email-*.html
 config/secrets.yml
 config/application.yml
 config/database.yml
+config/cloudinary.yml
 /.bundle
 /vendor/bundle
 .ruby-version
@@ -24,3 +25,4 @@ config/database.yml
 /config/database.production.yml
 /config/secrets.production.yml
 /config/application.production.yml
+/config/cloudinary.production.yml

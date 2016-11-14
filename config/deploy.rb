@@ -11,11 +11,11 @@ server '103.56.207.133', user: "#{fetch(:user)}", roles: %w{app db web}, primary
 set :deploy_to, "/home/#{fetch(:user)}/#{fetch(:application)}"
 set :pty, true
 
-set :linked_files, fetch(:linked_files, []).push('config/application.yml', 'config/database.yml', 'config/secrets.yml', 'config/puma.rb')
+set :linked_files, fetch(:linked_files, []).push('config/application.yml', 'config/database.yml', 'config/secrets.yml', 'config/puma.rb', 'config/cloudinary.yml')
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
 set :config_example_suffix, '.example'
-set :config_files, %w{config/application.yml config/database.yml config/secrets.yml}
+set :config_files, %w{config/application.yml config/database.yml config/secrets.yml config/cloudinary.yml}
 set :puma_conf, "#{shared_path}/config/puma.rb"
 
 namespace :deploy do
