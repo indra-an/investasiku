@@ -9,35 +9,43 @@
     <div class="row">
       <ul class="learning-accord">
         <li>
-          <% if @preference.module_step_1.present? %>
-            <%= render :partial => 'home/shared/learning_module_item', :locals => { :mod => @preference.module_step_1,
-                                                                                    :icon_url => 'icon1.png',
-                                                                                    :step_num => 1 } %>
-          <% end %>
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <% step_num = 0 %>
+            <% if @preference.module_step_1.present? %>
+              <% step_num += 1 %>
+              <%= render :partial => 'home/shared/learning_module_item', :locals => { :mod => @preference.module_step_1,
+                                                                                      :icon_url => 'module-step-1.png',
+                                                                                      :step_num => step_num } %>
+            <% end %>
 
-          <% if @preference.module_step_2.present? %>
-            <%= render :partial => 'home/shared/learning_module_item', :locals => { :mod => @preference.module_step_2,
-                                                                                    :icon_url => 'icon1.png',
-                                                                                    :step_num => 2 } %>
-          <% end %>
+            <% if @preference.module_step_2.present? %>
+              <% step_num += 1 %>
+              <%= render :partial => 'home/shared/learning_module_item', :locals => { :mod => @preference.module_step_2,
+                                                                                      :icon_url => 'module-step-2.png',
+                                                                                      :step_num => step_num } %>
+            <% end %>
 
-          <% if @preference.module_step_3.present? %>
-            <%= render :partial => 'home/shared/learning_module_item', :locals => { :mod => @preference.module_step_3,
-                                                                                    :icon_url => 'icon1.png',
-                                                                                    :step_num => 3 } %>
-          <% end %>
+            <% if @preference.module_step_3.present? %>
+              <% step_num += 1 %>
+              <%= render :partial => 'home/shared/learning_module_item', :locals => { :mod => @preference.module_step_3,
+                                                                                      :icon_url => 'module-step-3.png',
+                                                                                      :step_num => step_num } %>
+            <% end %>
 
-          <% if @preference.module_step_4.present? %>
-            <%= render :partial => 'home/shared/learning_module_item', :locals => { :mod => @preference.module_step_4,
-                                                                                    :icon_url => 'icon1.png',
-                                                                                    :step_num => 4 } %>
-          <% end %>
+            <% if @preference.module_step_4.present? %>
+              <% step_num += 1 %>
+              <%= render :partial => 'home/shared/learning_module_item', :locals => { :mod => @preference.module_step_4,
+                                                                                      :icon_url => 'module-step-4.png',
+                                                                                      :step_num => step_num } %>
+            <% end %>
 
-          <% if @preference.module_step_5.present? %>
-            <%= render :partial => 'home/shared/learning_module_item', :locals => { :mod => @preference.module_step_5,
-                                                                                    :icon_url => 'icon1.png',
-                                                                                    :step_num => 5 } %>
-          <% end %>
+            <% if @preference.module_step_5.present? %>
+              <% step_num += 1 %>
+              <%= render :partial => 'home/shared/learning_module_item', :locals => { :mod => @preference.module_step_5,
+                                                                                      :icon_url => 'module-step-5.png',
+                                                                                      :step_num => step_num } %>
+            <% end %>
+          </div>
         </li>
       </ul>
     </div>

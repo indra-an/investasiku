@@ -170,26 +170,34 @@ function initailizeSocialShare() {
     var parent = $(this).parent();
     var title = "Investasiku | " + $(parent).data("title");
     var url = $(parent).data("url");
-    var image = $(parent).data("image");
-    var text = title;
-    var finish_url = templates[media];
 
-    finish_url = finish_url.replace(/{url}/g, encodeURIComponent(url));
-    finish_url = finish_url.replace(/{title}/g, encodeURIComponent(title));
-    finish_url = finish_url.replace(/{text}/g, encodeURIComponent(text));
-    finish_url = finish_url.replace(/{image}/g, encodeURIComponent(image));
-
-    if(finish_url.indexOf("http://") === -1 && finish_url.indexOf("https://") === -1) {
-      return window.open(finish_url) && false;
+    if(media === "email") {
+      var email = 'test@theearth.com';
+      window.location = 'mailto:' + email + '?subject=' + title + '&body=' +   url;
+      return true;
     }
+    else {
+      var image = $(parent).data("image");
+      var text = title;
+      var finish_url = templates[media];
 
-    var screen_width = screen.width;
-    var screen_height = screen.height;
-    var popup_width = screen_width - (screen_width * 0.2);
-    var popup_height = screen_height - (screen_height * 0.2);
-    var left = (screen_width / 2) - (popup_width / 2);
-    var top = (screen_height / 2) - (popup_height / 2);
-    var parameters = "toolbar=0,status=0,width=" + popup_width + ",height=" + popup_height + ",top=" + top + ",left=" + left;
-    return window.open(finish_url, '', parameters) && false;
+      finish_url = finish_url.replace(/{url}/g, encodeURIComponent(url));
+      finish_url = finish_url.replace(/{title}/g, encodeURIComponent(title));
+      finish_url = finish_url.replace(/{text}/g, encodeURIComponent(text));
+      finish_url = finish_url.replace(/{image}/g, encodeURIComponent(image));
+
+      if(finish_url.indexOf("http://") === -1 && finish_url.indexOf("https://") === -1) {
+        return window.open(finish_url) && false;
+      }
+
+      var screen_width = screen.width;
+      var screen_height = screen.height;
+      var popup_width = screen_width - (screen_width * 0.2);
+      var popup_height = screen_height - (screen_height * 0.2);
+      var left = (screen_width / 2) - (popup_width / 2);
+      var top = (screen_height / 2) - (popup_height / 2);
+      var parameters = "toolbar=0,status=0,width=" + popup_width + ",height=" + popup_height + ",top=" + top + ",left=" + left;
+      return window.open(finish_url, '', parameters) && false;
+    }
   });
 }

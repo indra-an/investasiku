@@ -28,7 +28,7 @@ $(document).on("turbolinks:load", function() {
     }
 
     var scroll = $(window).scrollTop();
-    var limit = $(window).height() * 0.7;
+    var limit = 70;
 
     if(scroll >= limit) {
       $(".navbar-header").addClass("scrolled");
