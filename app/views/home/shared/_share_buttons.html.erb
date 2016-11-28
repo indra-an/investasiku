@@ -1,10 +1,6 @@
 <div class="share-group row no-margin<%= minimal ? ' beritaku' : '' %>" data-title="<%= title %>" data-url="<%= url %>" data-image="<%= full_image_url_for(image) || image_url('tax.jpg') %>">
+  <a class="btnz share stumbleupon" href="#" data-media="email"><i class="fa fa-envelope-o"></i><%= minimal ? '' : ' Email' %></a>
   <a class="btnz share facebook" href="#" data-media="facebook"><i class="fa fa-facebook"></i><%= minimal ? '' : ' Share'%></a>
-  <a class="btnz share gplus" href="#" data-media="gplus"><i class="fa fa-google-plus"></i><%= minimal ? '' : ' Share'%></a>
   <a class="btnz share twitter" href="#" data-media="twitter"><i class="fa fa-twitter"></i><%= minimal ? '' : ' Tweet'%></a>
-  <% unless minimal %>
-    <a class="btnz share stumbleupon" href="#" data-media="stumbleupon"><i class="fa fa-stumbleupon"></i>&nbsp;Stumble</a>
-  <% end %>
-  <a class="btnz share pinterest" href="#" data-media="pinterest"><i class="fa fa-pinterest"></i><%= minimal ? '' : ' Pin it'%></a>
   <a class="btnz share linkedin" href="#" data-media="linkedin"><i class="fa fa-linkedin"></i><%= minimal ? '' : ' LinkedIn'%></a>
 </div>

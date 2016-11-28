@@ -8,8 +8,10 @@
   <div id="collapse<%= step_num %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<%= step_num %>">
     <div class="panel-body caller">
       <p><%= raw mod.content %></p>
-      <%= render :partial => 'home/shared/learning_module_share_buttons', :locals => { :title => mod.title,
-                                                                                       :url => public_module_url } %>
+      <%= render :partial => 'home/shared/share_buttons', :locals => { :minimal => false,
+                                                                       :title => mod.title,
+                                                                       :url => public_module_url + '#collapse' + step_num.to_s,
+                                                                       :image => icon_url } %>
     </div>
   </div>
 </div>

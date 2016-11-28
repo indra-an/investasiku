@@ -1,10 +1,10 @@
 var templates = {
   facebook: 'https://www.facebook.com/sharer.php?s=100&p[title]={title}&u={url}&t={title}&p[summary]={text}&p[url]={url}',
-  gplus: 'https://plus.google.com/share?url={url}',
   twitter: 'https://twitter.com/intent/tweet?url={url}&text={text}',
-  stumbleupon: 'https://www.stumbleupon.com/submit?url={url}&title={title}',
-  pinterest: 'https://www.pinterest.com/pin/create/button/?media={image}&url={url}&description={text}',
   linkedin: 'https://www.linkedin.com/shareArticle?mini=true&url={url}&title={title}&summary={text}&source={url}'
+  // gplus: 'https://plus.google.com/share?url={url}',
+  // stumbleupon: 'https://www.stumbleupon.com/submit?url={url}&title={title}',
+  // pinterest: 'https://www.pinterest.com/pin/create/button/?media={image}&url={url}&description={text}',
   // vk: 'https://vkontakte.ru/share.php?url={url}&title={title}&description={text}&image={image}&noparse=true',
   // myworld: 'https://connect.mail.ru/share?url={url}&title={title}&description={text}&imageurl={image}',
   // odnoklassniki: 'http://odnoklassniki.ru/dk?st.cmd=addShare&st.s=1&st._surl={url}&st.comments={text}',
