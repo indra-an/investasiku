@@ -48,6 +48,11 @@ class HomeController < ApplicationController
   def contact_us
   end
 
+  def send_contact
+    ApplicationMailer.contact_us(params).deliver_now
+    redirect_to :back
+  end
+
   private
 
     def set_latest_news

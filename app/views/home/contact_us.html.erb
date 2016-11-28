@@ -17,18 +17,18 @@
       </div>
     </div>
     <div class="col-md-6">
-      <form class="contact-us">
+      <%= form_tag public_send_contact_path, :class => 'contact-us' do %>
         <div class="form-group">
-          <input type="text" class="form-control" id="ContactInputName" placeholder="Name" name="name">
+          <%= text_field_tag :name, '', :placeholder => 'Name', :class => 'form-control', :required => true %>
         </div>
         <div class="form-group">
-          <input type="email" class="form-control" id="ContactInputEmail" placeholder="Email" name="email">
+          <%= email_field_tag :email, '', :placeholder => 'Email', :class => 'form-control', :required => true %>
         </div>
         <div class="form-group">
-          <textarea class="form-control" rows="9" id="messages" name="messages" placeholder="Your Messages"></textarea>
+          <%= text_area_tag :content, '', :placeholder => 'Your message', :rows => 9, :id => 'messages', :class => 'form-control', :required => true %>
         </div>
         <button type="submit" class="btn btn-primary contact">Send Message</button>
-      </form>
+      <% end %>
     </div>
   </div>
 </div>

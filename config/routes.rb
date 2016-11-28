@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'tips/:slug' => 'home#investment_tips_view', :as => :public_tips_view
   get 'lookup' => 'home#perform_search', :as => :public_perform_search
   get 'contact' => 'home#contact_us', :as => :public_contact_us
+  post 'contact' => 'home#send_contact', :as => :public_send_contact
 
   devise_for :admins
 
