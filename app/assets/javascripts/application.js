@@ -15,6 +15,10 @@ if(window.should_disable_scroll_inspector == undefined) {
   window.should_disable_scroll_inspector = true;
 }
 
+if(window.last_contact_float_state == undefined) {
+  window.last_contact_float_state = "show";
+}
+
 $(document).on("turbolinks:click", function() {
   window.should_disable_scroll_inspector = true;
 });
@@ -59,6 +63,22 @@ $(document).on("turbolinks:load", function() {
   sideslider.click(function(event) {
     $(sel).toggleClass('in');
     $(sel2).toggleClass('out');
+  });
+
+  $(".learning-accord a[role='button']").on("click", function() {
+    var accordion = $(this).data("parent");
+    $(accordion).find(".collapse").collapse("hide");
+
+    $(this).parent().parent().find(".collapse").collapse("toggle");
+    return false;
+  });
+
+  $("#contact-accordion .collapse").collapse(window.last_contact_float_state);
+
+  $("#contact-accordion a.contact-float").on("click", function() {
+    $(this).parent().parent().find(".collapse").collapse("toggle");
+    window.last_contact_float_state = window.last_contact_float_state === "show" ? "hide" : "how"
+    return false;
   });
 });
 
