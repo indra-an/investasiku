@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'news/:slug' => 'home#news_view', :as => :public_news_view
   get 'tips/:slug' => 'home#investment_tips_view', :as => :public_tips_view
   get 'lookup' => 'home#perform_search', :as => :public_perform_search
+  get 'contact' => 'home#contact_us', :as => :public_contact_us
 
   devise_for :admins
 

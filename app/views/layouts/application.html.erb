@@ -22,6 +22,39 @@
       set_meta_tags image_src: "http://yoursite.com/icons/icon_32.png"
     %>
 
+    <% unless current_page?(public_contact_us_path) %>
+      <div class="floating-contact">
+        <div id="contact-accordion" role="tablist" aria-multiselectable="true">
+          <div class="card">
+            <div class="card-header" role="tab" id="contact-heading">
+              <a class="contact-float" data-toggle="collapse" data-parent="#contact-accordion" href="#contact-collapse" aria-expanded="true" aria-controls="contact-collapse">
+                <%= image_tag 'contact-icon.png' %>
+                <h5>Hi, Saya siap menjawab pertanyaan anda!</h5>
+              </a>
+            </div>
+
+            <div id="contact-collapse" class="collapse in floating" role="tabpanel" aria-labelledby="contact-heading">
+              <div class="white-form-group">
+                <p class="font-11">Lorem ipsum dolor sit amet</p>
+                <form class="contact-us">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="ContactInputName" placeholder="Name" name="name">
+                  </div>
+                  <div class="form-group">
+                    <input type="email" class="form-control" id="ContactInputEmail" placeholder="Email" name="email">
+                  </div>
+                  <div class="form-group">
+                    <textarea class="form-control" rows="9" id="messages" name="messages" placeholder="Your Messages"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary contact">Send Message</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
     <div class="navbar-header navbar-fixed-top transparent <%= navbar_class_for_action %>">
       <button data-toggle="collapse-side" data-target=".side-collapse" data-target-2=".side-collapse-container" type="button" class="navbar-toggle pull-left"><i class="fa fa-bars mobile" aria-hidden="true"></i></button>
     </div>
@@ -33,7 +66,7 @@
           <li class="<%= class_for_content_indicator(:home, :my_news, :news_view) %>"><%= link_to 'Beritaku', public_news_path %></a></li>
           <li class="<%= class_for_content_indicator(:home, :investment_tips, :investment_tips_view) %>"><%= link_to 'Investment Tips', public_tips_path %></a></li>
           <li class="<%= class_for_content_indicator(:home, :glossary) %>"><%= link_to 'Glossary', public_glossary_path %></a></li>
-          <li><%= link_to 'Learning Module', public_module_path, :class => 'learning-btn' %></li>
+          <li><%= link_to 'Belajar Investasi', public_module_path, :class => 'learning-btn' %></li>
           <li class="search-mobile hidden-lg hidden-sm hidden-md">
             <div class="input-group">
               <input type="text" class="form-control invest-rad-30" placeholder="Search for...">
@@ -70,7 +103,9 @@
               <div class="col-md-4 col-sm-3 col-xs-12 about">
                 <h5 class="grey"><strong>About</strong></h5>
                 <a href="" class="disp-block dark-grey"><strong>Team</strong></a>
-                <a href="" class="disp-block dark-grey"><strong>Contact Us</strong></a>
+                <%= link_to public_contact_us_path, :class => 'disp-block dark-grey' do %>
+                  <strong>Contact Us</strong>
+                <% end %>
               </div>
             </div>
 

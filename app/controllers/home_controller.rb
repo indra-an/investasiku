@@ -45,6 +45,9 @@ class HomeController < ApplicationController
   def perform_search
   end
 
+  def contact_us
+  end
+
   private
 
     def set_latest_news
