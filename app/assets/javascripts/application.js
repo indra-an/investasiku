@@ -44,6 +44,14 @@ $(document).on("turbolinks:load", function() {
     }
   });
 
+  $(".pagination.fixed-left a[href^='#']").on('click', function(e) {
+   e.preventDefault();
+   var target = $(this).attr("href");
+   $("html, body").animate({ scrollTop: $(target).offset().top - 80 }, 300, function() {
+     window.location.hash = target;
+   });
+  });
+
   $("#form-search-context #query").keypress(function(e) {
     if(e.which == 13) {
       $("#form-search-context button.invest-rad-30").click();

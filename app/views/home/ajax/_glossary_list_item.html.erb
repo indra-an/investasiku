@@ -1,8 +1,11 @@
 <% if @glossaries.blank? %>
   <h4><%= params[:query].present? || params[:tag].present? ? "No matched glossary for '#{params[:query] || params[:tag]}'" : 'Sorry, no available glossary right now!' %></h4>
 <% else %>
+  <% last_word = nil %>
   <% @glossaries.each do |glossary| %>
-    <div class="glossary-content border-bottom">
+    <% current_first_word = glossary.title[0] %>
+    <% last_word = current_first_word.eql?(last_word) ? last_word : current_first_word %>
+    <div id="<%= last_word %>" class="glossary-content border-bottom">
       <h4 class="investasiku-color"><%= glossary.title %></h4>
       <p><%= glossary.description %></p>
       <%= render :partial => 'home/shared/share_buttons', :locals => { :minimal => false,

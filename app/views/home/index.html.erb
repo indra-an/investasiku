@@ -19,16 +19,12 @@
   <div class="container-fluid">
     <div class="row">
       <div class="jumbotron-split">
-        <div class="col-md-6 col-sm-12 col-xs-12 front-pad-left" style="background: url(<%= @hot_news.image_url || image_url('tax.jpg') %>); background-size:cover; background-position:center">
-          <div class="beritaku-hot-split">
-            <div class="hot-split-wrapper">
-              <div class="top section-badge beritaku-sect">Beritaku</div>
-
-              <div class="headline-beritaku">
-                <p class="font-12 grey"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<%= l @hot_news.created_at %></p>
-                <h4 class="white"><%= @hot_news.title %></h4>
-                <%= link_to 'Read more', public_news_view_path(@hot_news.slug), :class => 'investasiku-color' %>
-              </div>
+        <div class="col-md-6 col-sm-12 col-xs-12 front-pad-right border-right" style="background: url(<%= image_url('home-beritaku.png') %>); background-size:cover; background-position:center">
+          <div class="headline-split vertical-middle">
+            <div class="section-badge tema beritaku-sect">Beritaku</div>
+            <div class="pull-left split-width">
+              <h4 class="white">Dapatkan tips harian untuk mengatur investasimu</h4>
+              <a href="#" class="invest-color">Read more</a>
             </div>
           </div>
         </div>

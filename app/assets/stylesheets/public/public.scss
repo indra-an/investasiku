@@ -343,7 +343,7 @@ box-shadow: 0px 2px 16px -1px rgba(0,0,0,0.1);
 .front-pad-right {
   padding-right: 100px;
   padding-left: 50px;
-  background: image-url('maskot-01.png'); background-size:cover; background-position:center;
+  background: image-url('home-investment.png'); background-size:cover; background-position:center;
 }
 
 .jumbotron-split .front-pad-left {
@@ -900,7 +900,7 @@ a.up-btn.disabled , a.down-btn.disabled {
     height: 100vh;
     padding-top: 60px;
     top: 0;
-    overflow: hidden;
+    overflow-y: auto;
     margin-top: 0;
     border-radius: 0;
 }

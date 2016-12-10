@@ -20,7 +20,6 @@ class HomeController < ApplicationController
   def glossary
     @word_indexes = Glosarry.word_indexes
     @glossaries = Glosarry.search(params[:query]).order(:title => :asc)
-                          .page(params[:page]).per(10)
   end
 
   def investment_tips

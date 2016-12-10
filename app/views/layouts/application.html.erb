@@ -29,7 +29,7 @@
             <div class="card-header" role="tab" id="contact-heading">
               <a class="contact-float" data-parent="#contact-accordion" href="#contact-collapse" aria-expanded="true" aria-controls="contact-collapse">
                 <%= image_tag 'contact-icon.png' %>
-                <h5>Hi, Saya siap menjawab pertanyaan anda!</h5>
+                <h5>Hi, Subscribe untuk mengetahui update terbaru</h5>
               </a>
             </div>
 
@@ -43,10 +43,7 @@
                   <div class="form-group">
                     <%= email_field_tag :email, '', :placeholder => 'Email', :class => 'form-control', :required => true %>
                   </div>
-                  <div class="form-group">
-                    <%= text_area_tag :content, '', :placeholder => 'Your message', :rows => 9, :id => 'messages', :class => 'form-control', :required => true %>
-                  </div>
-                  <button type="submit" class="btn btn-primary contact">Send Message</button>
+                  <button type="submit" class="btn btn-primary contact">Subscribe</button>
                 <% end %>
               </div>
             </div>
