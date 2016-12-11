@@ -48,7 +48,16 @@ class HomeController < ApplicationController
   end
 
   def send_contact
-    ApplicationMailer.contact_us(params).deliver_now
+    full_name = params[:name]
+    email = params[:email]
+    contact = Contact.find_or_create_by(:email => email)
+
+    unless contact.name.blank?
+      ApplicationMailer.contact_us(params).deliver_now
+      contact.name = full_name
+    end
+
+    contact.save
     redirect_to :back
   end
 
