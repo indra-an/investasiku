@@ -1450,3 +1450,24 @@ box-shadow: 6px -4px 24px -10px rgba(0,0,0,0.35);
 .news-details.invesment-view {
     padding-top: 115px;
 }
+
+.floating-contact div .card div#contact-heading {
+    background: #5b9874;
+}
+
+.menu-kolegial li a.learning-btn, .invest-btn, button.btn.btn-primary.contact {
+   background: #58ab7b !important;
+}
+
+.menu-kolegial li a.learning-btn:hover, .invest-btn:hover, button.btn.btn-primary.contact:hover {
+   background: #468c63!important;
+   color: white !important;
+}
+
+.scrolled nav .menu-kolegial li a:hover {
+   color: white !important;
+}
+
+.hot div h4 {
+   text-shadow: 2px 2px 3px rgba(75, 75, 75, 1);
+}
