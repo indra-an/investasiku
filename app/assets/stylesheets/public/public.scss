@@ -1356,11 +1356,16 @@ i.fa {
 
 /** floating **/
 
+.fa.fa-minus {
+  margin-left: 10px;
+font-size: 14px
+}
+
 .floating-contact {
   position: fixed;
   bottom: -2px;
   right: 20px;
-  width: 300px;
+  width: 335px;
   z-index: 10000;
   -webkit-box-shadow: 6px -4px 24px -10px rgba(0,0,0,0.35);
 -moz-box-shadow: 6px -4px 24px -10px rgba(0,0,0,0.35);
