@@ -592,7 +592,7 @@ height: 55px;
   color: white !important;
   text-align: center;
   vertical-align: middle;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .footer .container .row .latest a:hover .fa{
@@ -984,7 +984,9 @@ a.up-btn.disabled , a.down-btn.disabled {
 }
 
 .sb-icon-search i {
-  font-size: 16px;
+  font-size: 18px;
+  margin-right:0 !important;
+  margin-top: -2px;
 }
 
 .sb-search-submit {
@@ -1346,10 +1348,6 @@ button.btn.btn-primary.contact:hover {
     margin: 30px 0;
 }
 
-i.fa {
-    margin-right: 12px;
-}
-
 .map-section {
     display: none;
 }
@@ -1390,7 +1388,7 @@ box-shadow: 6px -4px 24px -10px rgba(0,0,0,0.35);
     height: 40px;
     display: block;
     clear: both;
-    background: #4fd391;
+    background: #13a89e !important;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
@@ -1410,7 +1408,8 @@ box-shadow: 6px -4px 24px -10px rgba(0,0,0,0.35);
 }
 
 .menu-kolegial li a.learning-btn{
-  padding: 4px 14px;
+  padding: 5px 14px;
+font-size: 13px;
 }
 
 .menu-kolegial li a.learning-btn:hover, .invest-btn:hover, button.btn.btn-primary.contact:hover  {
@@ -1452,11 +1451,12 @@ box-shadow: 6px -4px 24px -10px rgba(0,0,0,0.35);
 }
 
 .floating-contact div .card div#contact-heading {
-    background: #5b9874;
+    background: #468c63;
 }
 
 .menu-kolegial li a.learning-btn, .invest-btn, button.btn.btn-primary.contact {
-   background: #58ab7b !important;
+   background: #13a89e !important;
+   font-size: 13px !important;
 }
 
 .menu-kolegial li a.learning-btn:hover, .invest-btn:hover, button.btn.btn-primary.contact:hover {
@@ -1464,10 +1464,18 @@ box-shadow: 6px -4px 24px -10px rgba(0,0,0,0.35);
    color: white !important;
 }
 
-.scrolled nav .menu-kolegial li a:hover {
+.scrolled nav .menu-kolegial li a.learning-btn:hover {
    color: white !important;
 }
 
 .hot div h4 {
    text-shadow: 2px 2px 3px rgba(75, 75, 75, 1);
+}
+
+a.up-btn.investasiku-color.text-center.disabled {
+position: fixed;
+top: 120px;
+left: 0;
+width: 100%
+
 }

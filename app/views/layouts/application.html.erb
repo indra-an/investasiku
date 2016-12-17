@@ -76,7 +76,7 @@
           <div id="sb-search" class="sb-search hidden-xs">
             <%= form_tag public_perform_search_path, :method => :get do %>
               <%= hidden_field_tag :tag, params[:tag] %>
-              <%= text_field_tag :query, '', :class => 'sb-search-input', :placeholder => 'Enter your search term...', :type => 'search' %>
+              <%= text_field_tag :query, '', :class => 'sb-search-input', :placeholder => 'Cari...', :type => 'search' %>
               <%= submit_tag '', :class => 'sb-search-submit' %>
               <span class="sb-icon-search"><i class="fa fa-search"></i></span>
             <% end %>
@@ -107,14 +107,20 @@
             </div>
 
             <div class=" col-md-4 col-sm-12 col-xs-12 latest">
-              <%= link_to @preference.facebook_link, :class => 'dark-grey' do %>
-                <i class="fa fa-facebook-official" aria-hidden="true"></i>
+              <% unless @preference.facebook_link.blank? %>
+                <%= link_to @preference.facebook_link, :class => 'dark-grey' do %>
+                  <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                <% end %>
               <% end %>
-              <%= link_to @preference.twitter_link, :class => 'dark-grey' do %>
-                <i class="fa fa-twitter" aria-hidden="true"></i>
+              <% unless @preference.twitter_link.blank? %>
+                <%= link_to @preference.twitter_link, :class => 'dark-grey' do %>
+                  <i class="fa fa-twitter" aria-hidden="true"></i>
+                <% end %>
               <% end %>
-              <%= link_to @preference.instagram_link, :class => 'dark-grey' do %>
-                <i class="fa fa-instagram" aria-hidden="true"></i>
+              <% unless @preference.instagram_link.blank? %>
+                <%= link_to @preference.instagram_link, :class => 'dark-grey' do %>
+                  <i class="fa fa-instagram" aria-hidden="true"></i>
+                <% end %>
               <% end %>
             </div>
           </div>
