@@ -343,7 +343,7 @@ box-shadow: 0px 2px 16px -1px rgba(0,0,0,0.1);
 .front-pad-right {
   padding-right: 100px;
   padding-left: 50px;
-  background: image-url('home-investment.png'); background-size:cover; background-position:center;
+  background: image-url('home-investment.jpg'); background-size:cover; background-position:center;
 }
 
 .jumbotron-split .front-pad-left {
@@ -984,7 +984,7 @@ a.up-btn.disabled , a.down-btn.disabled {
 }
 
 .sb-icon-search i {
-  font-size: 18px;
+  font-size: 22px;
   margin-right:0 !important;
   margin-top: -2px;
 }
@@ -1388,7 +1388,7 @@ box-shadow: 6px -4px 24px -10px rgba(0,0,0,0.35);
     height: 40px;
     display: block;
     clear: both;
-    background: #13a89e !important;
+    background: #565656 !important;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
@@ -1460,7 +1460,7 @@ font-size: 13px;
 }
 
 .menu-kolegial li a.learning-btn:hover, .invest-btn:hover, button.btn.btn-primary.contact:hover {
-   background: #468c63!important;
+   background: #108a82!important;
    color: white !important;
 }
 
@@ -1478,4 +1478,49 @@ top: 120px;
 left: 0;
 width: 100%
 
+}
+
+
+/** tim page **/
+.wrapper-tim {
+  width: 150px;
+  height: 150px;
+  display: block;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+}
+
+.tim-det {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.glossary-header.tim {
+  margin-bottom: 0px;
+}
+
+.tim-person {
+  padding: 15px;
+}
+
+.border-1px {
+  padding: 15px 35px;
+  margin-bottom: 15px;
+  border: 1.5px solid #e1e1e1;
+  border-radius: 5px;
+  height: 515px;
+}
+
+
+.col-xs-12.front-body-headline div h2 {
+    margin-bottom: 7px;
+}
+
+.col-xs-12.front-body-headline div p {
+    margin-bottom: 25px;
+}
+
+.margin-bot-25 {
+  margin-bottom: 25px;
 }

@@ -45,6 +45,10 @@
     padding-bottom: 0;
   }
 
+  .border-1px {
+  height: auto !important;
+  }
+
   footer {
     bottom: inherit !important;
   }
@@ -52,6 +56,10 @@
   .white-opacity {
     display: block;
   }
+
+  .front-page div div h2, .front-page div div p {
+    padding: 0 25px;
+}
 
 .footer {
   text-align: center;
@@ -145,6 +153,8 @@
 
 .mobile.menu-kolegial li .learning-btn {
     width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .front-beritaku, .front-investment-theme, .front-glossary {

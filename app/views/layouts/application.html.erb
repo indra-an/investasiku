@@ -99,9 +99,17 @@
             <div class="col-md-4 col-md-offset-1 col-sm-12 col-xs-12 link-footer">
               <div class="col-md-4 col-sm-3 col-xs-12 about">
                 <h5 class="grey"><strong>About</strong></h5>
-                <a href="" class="disp-block dark-grey"><strong>Team</strong></a>
+                <%= link_to public_team_path, :class => 'disp-block dark-grey' do %>
+                  <strong>Team</strong>
+                <% end %>
                 <%= link_to public_contact_us_path, :class => 'disp-block dark-grey' do %>
-                  <strong>Contact Us</strong>
+                  <strong>Kontak Kami</strong>
+                <% end %>
+                <%= link_to public_terms_path, :class => 'disp-block dark-grey' do %>
+                  <strong>Syarat dan Ketentuan</strong>
+                <% end %>
+                <%= link_to public_about_us_path, :class => 'disp-block dark-grey' do %>
+                  <strong>Tentang Kami</strong>
                 <% end %>
               </div>
             </div>

@@ -61,6 +61,15 @@ class HomeController < ApplicationController
     redirect_to :back
   end
 
+  def team
+  end
+
+  def terms
+  end
+
+  def about_us
+  end
+
   private
 
     def set_latest_news
