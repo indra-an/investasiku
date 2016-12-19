@@ -392,7 +392,7 @@ box-shadow: 0px 2px 16px -1px rgba(0,0,0,0.1);
 }
 
 .front-page.bottom-section {
-  padding: 0 88px;
+  padding: 115px 88px 0px;
   margin-bottom: 50px;
 }
 
@@ -592,7 +592,7 @@ height: 55px;
   color: white !important;
   text-align: center;
   vertical-align: middle;
-  font-size: 18px;
+  font-size: 24px;
 }
 
 .footer .container .row .latest a:hover .fa{
@@ -897,7 +897,7 @@ a.up-btn.disabled , a.down-btn.disabled {
     width: 50px;
     position: fixed;
     left: 0;
-    height: 100vh;
+    height: 100%;
     padding-top: 60px;
     top: 0;
     overflow-y: auto;
@@ -1523,4 +1523,32 @@ width: 100%
 
 .margin-bot-25 {
   margin-bottom: 25px;
+}
+
+.pull-left.split-width a {
+  color: #53e0d2 !important;
+}
+
+.front-page.bottom-section div div p.text-center {
+    margin-bottom: 50px !important;
+}
+
+.pull-left.split-width h4 {
+text-shadow: 2px 2px 3px #4b4b4b;
+}
+
+.col-xs-12.front-body-headline div h2, .col-xs-12.front-body-headline div p {
+text-shadow: 2px 2px 3px #4b4b4b;
+}
+
+.title-pencarian {
+  margin-bottom: 20px;
+}
+
+.search-general-tit {
+  margin-left: 28px;
+}
+
+h5.fa.fa-minus.minimize-icon {
+  margin: 15px 15px;
 }

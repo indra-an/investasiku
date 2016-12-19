@@ -18,7 +18,7 @@ class HomeController < ApplicationController
   end
 
   def glossary
-    @word_indexes = Glosarry.word_indexes
+    @word_indexes = [*('A'..'Z')]
     @glossaries = Glosarry.search(params[:query]).order(:title => :asc)
   end
 
@@ -42,6 +42,19 @@ class HomeController < ApplicationController
   end
 
   def perform_search
+    @news = News.search(params[:query]).order(:created_at => :desc)
+    @news_count = @news.count
+    @news = @news.limit(5)
+
+    @tips = InvestmentTip.search(params[:query]).order(:created_at => :desc)
+    @tips_count = @tips.count
+    @tips = @tips.limit(5)
+
+    @glossaries = Glosarry.search(params[:query]).order(:title => :asc)
+    @glossaries_count = @glossaries.count
+    @glossaries = @glossaries.limit(5)
+
+    @total_count = @news_count + @tips_count + @glossaries_count
   end
 
   def contact_us
@@ -50,14 +63,18 @@ class HomeController < ApplicationController
   def send_contact
     full_name = params[:name]
     email = params[:email]
-    contact = Contact.find_or_create_by(:email => email)
+    message = params[:message].class.eql?(Array) ? params[:message].first : params[:message]
+    subscribe = params[:subscribe].to_i
+    contact = Contact.find_or_initialize_by(:email => email)
 
-    unless contact.name.blank?
+    if contact.new_record?
       ApplicationMailer.contact_us(params).deliver_now
       contact.name = full_name
+      contact.message = message
+      contact.is_subscribed = subscribe.eql?(1)
+      contact.save
     end
 
-    contact.save
     redirect_to :back
   end
 

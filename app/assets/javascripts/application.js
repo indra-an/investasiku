@@ -19,14 +19,25 @@ if(window.last_contact_float_state == undefined) {
   window.last_contact_float_state = "show";
 }
 
+if(window.should_enable_hash_inspector == undefined) {
+  window.should_enable_hash_inspector = false;
+}
+
 $(document).on("turbolinks:click", function() {
   window.should_disable_scroll_inspector = true;
+  window.should_enable_hash_inspector = false;
 });
 
 $(document).on("turbolinks:load", function() {
   new UISearch(document.getElementById("sb-search"));
 
-  $(window).scroll(function() {
+  if(window.should_enable_hash_inspector && window.location.hash) {
+    var target = window.location.hash;
+    var top_offset = $(target).offset().top;
+    $("html, body").animate({ scrollTop: top_offset > 80 ? (top_offset - 80) : top_offset }, 300, null);
+  }
+
+  $(window).on("scroll", function() {
     if(should_disable_scroll_inspector) {
       return;
     }
@@ -52,23 +63,25 @@ $(document).on("turbolinks:load", function() {
    });
   });
 
-  $("#form-search-context #query").keypress(function(e) {
+  $("#form-search-context #query").on("keypress", function(e) {
     if(e.which == 13) {
       $("#form-search-context button.invest-rad-30").click();
       return false;
     }
   });
 
-  $("#form-search-context button.invest-rad-30").on("click", function() {
-    $("#form-search-context i.fa").removeClass().addClass("fa fa-spinner fa-pulse fa-fw");
-    $("#form-search-context").submit();
-    $("#form-search-context .invest-rad-30").attr("disabled", "disabled");
+  $("#form-search-context button.invest-rad-30").on("click", function(e) {
+    if(!$("#form-search-context i.fa").hasClass("fa-spinner")) {
+      $("#form-search-context i.fa").removeClass().addClass("fa fa-spinner fa-pulse fa-fw");
+      $("#form-search-context").submit();
+      $("#form-search-context .invest-rad-30").attr("disabled", "disabled");
+    }
   });
 
   var sideslider = $('[data-toggle=collapse-side]');
   var sel = sideslider.attr('data-target');
   var sel2 = sideslider.attr('data-target-2');
-  sideslider.click(function(event) {
+  sideslider.on("click", function(event) {
     $(sel).toggleClass('in');
     $(sel2).toggleClass('out');
   });

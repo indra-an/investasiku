@@ -2,8 +2,9 @@ namespace :cron do
   desc 'Process queued newsletters'
   task broadcast_newsletters: :environment do
     begin
-      NewsletterQueue.queued.each(&:processing!)
-      NewsletterQueue.queued.each(&:broadcast)
+      Contact.where(:is_subscribed => true).each do |contact|
+        NewsletterQueue.queued.each { |q| q.broadcast(contact) }
+      end
     rescue
     end
   end

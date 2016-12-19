@@ -116,7 +116,7 @@
 
           <% @glossaries.each do |glossary| %>
             <div class="front-glossary-small border-bottom">
-              <%= link_to public_glossary_path, :class => 'sect-child row no-margin' do %>
+              <%= link_to public_glossary_path + '#' + glossary.title.parameterize, :class => 'sect-child row no-margin' do %>
                 <div class="headline-small-sect">
                   <h5 class="investasiku-color"><%= glossary.title %></h5>
                   <p class="font-12 normal-font truncate-6"><%= glossary.description %></p>

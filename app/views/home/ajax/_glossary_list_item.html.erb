@@ -5,13 +5,15 @@
   <% @glossaries.each do |glossary| %>
     <% current_first_word = glossary.title[0] %>
     <% last_word = current_first_word.eql?(last_word) ? last_word : current_first_word %>
-    <div id="<%= last_word %>" class="glossary-content border-bottom">
-      <h4 class="investasiku-color"><%= glossary.title %></h4>
-      <p><%= glossary.description %></p>
-      <%= render :partial => 'home/shared/share_buttons', :locals => { :minimal => false,
-                                                                       :title => glossary.title,
-                                                                       :url => public_glossary_url,
-                                                                       :image => image_url('logo_color.png') } %>
+    <div id="<%= glossary.title.parameterize %>">
+      <div id="<%= last_word %>" class="glossary-content border-bottom">
+        <h4 class="investasiku-color"><%= glossary.title %></h4>
+        <p><%= glossary.description %></p>
+        <%= render :partial => 'home/shared/share_buttons', :locals => { :minimal => false,
+                                                                         :title => glossary.title,
+                                                                         :url => public_glossary_url,
+                                                                         :image => image_url('logo_color.png') } %>
+      </div>
     </div>
   <% end %>
 <% end %>

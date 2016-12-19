@@ -1,0 +1,71 @@
+<div class="front-page bottom-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 title-pencarian">
+        <h5 >Hasil pencarian "<%= params[:query] %>"</h5>
+        <p class="grey">menemukan <%= @total_count %> hasil</p>
+      </div>
+
+      <div class="front-beritaku search col-md-4 col-xs-12">
+        <div class="row">
+          <%= link_to public_news_path({ :query => params[:query] }) do %>
+            <h4 class="margin-bot-25 investasiku-color uppercase search-gen">Beritaku (<%= @news_count %>)</h4>
+          <% end %>
+
+          <% @news.each do |news| %>
+            <div class="front-beritaku-small border-bottom">
+              <%= link_to public_news_view_path(news.slug), :class => 'sect-child row no-margin' do %>
+                <div class="beritaku-wrapper">
+                  <%= image_tag news.image_url || image_url('tax.jpg'), :class => 'imej' %>
+                </div>
+                <div class="headline-small-sect">
+                  <h5 class="investasiku-color"><%= news.title %></h5>
+                  <p class="font-12 grey"><i class="fa fa-clock-o"></i>&nbsp;<%= l news.created_at %></p>
+                </div>
+              <% end %>
+            </div>
+            <% end %>
+        </div>
+      </div>
+
+      <div class="front-investment-theme search col-md-4 col-xs-12">
+        <div class="row">
+          <%= link_to public_tips_path({ :query => params[:query] }) do %>
+            <h4 class="margin-bot-25 investasiku-color uppercase search-general-tit">Tips Investasi (<%= @tips_count %>)</h4>
+          <% end %>
+
+          <% @tips.each do |tip| %>
+            <div class="front-investment-small border-bottom">
+              <%= link_to public_tips_view_path(tip.slug), :class => 'sect-child row no-margin' do %>
+                <div class="headline-small-sect">
+                  <h5 class="investasiku-color"><%= tip.title %></h5>
+                  <p class="font-12 normal-font truncate-6"><%= strip_tags(tip.content) %></p>
+                  <p class="font-12 grey"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<%= l tip.created_at %></p>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="front-glossary search col-md-4 col-xs-12">
+        <div class="row">
+          <%= link_to public_glossary_path({ :query => params[:query] }) do %>
+            <h4 class="margin-bot-25 investasiku-color uppercase search-general-tit">Glosarium (<%= @glossaries_count %>)</h4>
+          <% end %>
+
+          <% @glossaries.each do |glossary| %>
+            <div class="front-glossary-small border-bottom">
+              <%= link_to public_glossary_path + '#' + glossary.title.parameterize, :class => 'sect-child row no-margin' do %>
+                <div class="headline-small-sect">
+                  <h5 class="investasiku-color"><%= glossary.title %></h5>
+                  <p class="font-12 normal-font truncate-6"><%= glossary.description %></p>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

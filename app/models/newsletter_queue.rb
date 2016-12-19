@@ -4,9 +4,9 @@ class NewsletterQueue < ApplicationRecord
   enum :status => [:queued, :processing, :sent, :failed]
 
   # used by rake cron task to broadcast newsletters
-  def broadcast
-    # TODO: send email
-    self.status = 1
-    self.save
+  def broadcast(contact)
+    self.processing!
+    ApplicationMailer.newsletters(contact, self).deliver_now rescue self.failed!
+    self.sent!
   end
 end

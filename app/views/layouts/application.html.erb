@@ -29,21 +29,30 @@
             <div class="card-header" role="tab" id="contact-heading">
               <a class="contact-float" data-parent="#contact-accordion" href="#contact-collapse" aria-expanded="true" aria-controls="contact-collapse">
                 <%= image_tag 'contact-icon.png' %>
-                <h5>Hi, Subscribe untuk mengetahui update terbaru <i class="fa fa-minus" aria-hidden="true"></i></h5>
+                <h5>Ada yang bisa kami bantu?</h5>
+                <h5 class="fa fa-minus pull-right minimize-icon" aria-hidden="true"></h5>
               </a>
             </div>
 
             <div id="contact-collapse" class="collapse in floating" role="tabpanel" aria-labelledby="contact-heading">
               <div class="white-form-group">
-                <p class="font-11">Lorem ipsum dolor sit amet</p>
+                <p class="font-11">Sampaikan pertanyaan kamu seputar investasi disini</p>
                 <%= form_tag public_send_contact_path, :class => 'contact-us' do %>
                   <div class="form-group">
-                    <%= text_field_tag :name, '', :placeholder => 'Name', :class => 'form-control', :required => true %>
+                    <%= text_field_tag :name, '', :placeholder => 'Nama', :class => 'form-control', :required => true %>
                   </div>
                   <div class="form-group">
                     <%= email_field_tag :email, '', :placeholder => 'Email', :class => 'form-control', :required => true %>
                   </div>
-                  <button type="submit" class="btn btn-primary contact">Subscribe</button>
+                  <div class="form-group">
+                    <%= text_area :message, '', :placeholder => 'Pertanyaan kamu', :class => 'form-control', :required => true, :rows => 4 %>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <%= check_box_tag :subscribe %>&nbsp;Saya ingin subscribe newsletter Investasiku
+                    </label>
+                  </div>
+                  <button type="submit" class="btn btn-primary contact">Kirim </button>
                 <% end %>
               </div>
             </div>
@@ -75,7 +84,6 @@
 
           <div id="sb-search" class="sb-search hidden-xs">
             <%= form_tag public_perform_search_path, :method => :get do %>
-              <%= hidden_field_tag :tag, params[:tag] %>
               <%= text_field_tag :query, '', :class => 'sb-search-input', :placeholder => 'Cari...', :type => 'search' %>
               <%= submit_tag '', :class => 'sb-search-submit' %>
               <span class="sb-icon-search"><i class="fa fa-search"></i></span>
@@ -93,7 +101,7 @@
           <div class="row">
             <div class="no-padding col-md-3 col-sm-12 col-xs-12">
               <h4 class="white"><strong>Investasiku</strong></h4>
-              <p class="light grey font-12">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
+              <p class="light grey font-12">Investasiku merupakan sebuah platform online yang dirancang untuk mengedukasi pembaca mengenai keuntungan dan cara-cara investasi dengan fokus khusus investasi reksadana</p>
             </div>
 
             <div class="col-md-4 col-md-offset-1 col-sm-12 col-xs-12 link-footer">

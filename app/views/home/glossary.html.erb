@@ -34,3 +34,9 @@
     </div>
   </div>
 </div>
+
+<%= content_for :javascript do %>
+<script>
+  window.should_enable_hash_inspector = true;
+</script>
+<% end %>
