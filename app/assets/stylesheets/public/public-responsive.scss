@@ -228,3 +228,25 @@ iframe {
   padding-top: 25px;
 }
 }
+
+@media (max-width: 500px) {
+  .learning-accord a img {
+    margin-top: -15px;
+  }
+}
+
+@media (max-width:768px) {
+  .search-mobile .input-group .form-control:not(:first-child):not(:last-child) {
+    border-radius: 0;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+
+  .search-mobile .input-group {
+    width:100%;
+  }
+
+  .search-mobile .input-group .form-control {
+    width: 83%;
+  }
+}

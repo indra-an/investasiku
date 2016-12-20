@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= display_meta_tags site: 'Investasiku' %>
+    <%= favicon_link_tag %>
 
     <%= stylesheet_link_tag 'application', :media => 'all', 'data-turbolinks-track' => 'reload' %>
     <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Raleway|Roboto+Slab' %>
@@ -75,10 +76,12 @@
           <li><%= link_to 'Belajar Investasi', public_module_path, :class => 'learning-btn' %></li>
           <li class="search-mobile hidden-lg hidden-sm hidden-md">
             <div class="input-group">
-              <input type="text" class="form-control invest-rad-30" placeholder="Search for...">
-              <span class="input-group-btn">
-                <button class="btn btn-default invest-rad-30" type="button"><i class="fa fa-search"></i></button>
-              </span>
+              <%= form_tag public_perform_search_path, :method => :get do %>
+                <%= text_field_tag :query, '', :class => 'form-control invest-rad-30', :placeholder => 'Cari...' %>
+                <span class="input-group-btn">
+                  <button class="btn btn-default invest-rad-30" type="button"><i class="fa fa-search"></i></button>
+                </span>
+              <% end %>
             </div>
           </li>
 
