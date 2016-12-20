@@ -6,7 +6,7 @@
       <div class="beritaku-content border-grey">
         <div class="wrapper-thumbnail" style="background: url(<%= news.image_url || image_url('tax.jpg') %>); background-size:cover; background-position:center"></div>
         <div class="beritaku-title">
-          <h4><%= news.title %></h4>
+          <h4 class="truncate-3"><%= news.title %></h4>
           <%= render :partial => 'home/shared/share_buttons', :locals => { :minimal => true,
                                                                            :title => news.title,
                                                                            :url => public_news_view_url(news.slug),

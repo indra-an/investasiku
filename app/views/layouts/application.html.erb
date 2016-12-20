@@ -79,7 +79,7 @@
               <%= form_tag public_perform_search_path, :method => :get do %>
                 <%= text_field_tag :query, '', :class => 'form-control invest-rad-30', :placeholder => 'Cari...' %>
                 <span class="input-group-btn">
-                  <button class="btn btn-default invest-rad-30" type="button"><i class="fa fa-search"></i></button>
+                  <button class="btn btn-default invest-rad-30" type="submit"><i class="fa fa-search"></i></button>
                 </span>
               <% end %>
             </div>
@@ -147,7 +147,7 @@
       </footer>
     </section>
 
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-eval' => false, 'data-turbolinks-track' => 'reload' %>
     <%= yield :javascript %>
   </body>
 </html>
