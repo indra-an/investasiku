@@ -3,9 +3,9 @@
 
 Project details:
 
-* <b>Ruby version</b> 2.3.1
+* <b>Ruby version</b> 2.3.3
 
-* <b>Rails version</b> 5.0.0
+* <b>Rails version</b> 5.0.0.1
 
 * <b>Database adapter</b> PostgreSQL
 
