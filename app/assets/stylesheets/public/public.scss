@@ -1562,3 +1562,67 @@ h5.fa.fa-minus.minimize-icon {
 .front-page div div h2, .front-page div div p {
   padding: 0;
 }
+
+.home-jumbotron {
+ height:60vh;
+ border-bottom: 2px solid white;
+}
+
+.jumbotron-split {
+ height:40vh;
+}
+
+.panel-collapse .absolute-up {
+position: absolute;
+bottom: 10px;
+right: 15px;
+}
+
+.panel-collapse .absolute-up a {
+display: block;
+border-radius: 50%;
+}
+
+.panel-collapse .absolute-up a i {
+font-size: 30px;
+border-radius: 50%;
+}
+
+.panel-collapse .absolute-up a:hover i{
+-webkit-box-shadow: 0px 2px 16px -1px rgba(0,0,0,0.3);
+-moz-box-shadow: 0px 2px 16px -1px rgba(0,0,0,0.3);
+box-shadow: 0px 2px 16px -1px rgba(0,0,0,0.3);
+}
+
+.panel-collapse {
+position: relative;
+}
+
+@media (max-width: 768px) {
+.navbar-header.navbar-fixed-top {
+  width: 100%;
+  background: white;
+  -webkit-box-shadow: 0px 2px 16px -1px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 2px 16px -1px rgba(0,0,0,0.3);
+  box-shadow: 0px 2px 16px -1px rgba(0,0,0,0.3);
+}
+.mobile.navbar-brand, .scrolled nav .mobile.navbar-brand {
+  display: none;
+}
+
+.navbar-header span.visible-sm.visible-xs {
+  width: 120px;
+  display: inline-block !important;
+  margin-top: 15px;
+  margin-left: -15px;
+}
+
+.navbar-header span.visible-sm.visible-xs img {
+  width: 100%;
+}
+
+ul.nav.navbar-nav.menu-kolegial.navbar-right.mobile {
+  padding-top: 0;
+  margin-top: -1;
+}
+}

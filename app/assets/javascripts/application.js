@@ -55,7 +55,7 @@ $(document).on("turbolinks:load", function() {
     }
   });
 
-  $(".pagination.fixed-left a[href^='#']").on('click', function(e) {
+  $(".pagination.fixed-left a[href^='#'], .scroll-to-position").on('click', function(e) {
    e.preventDefault();
    var target = $(this).attr("href");
    $("html, body").animate({ scrollTop: $(target).offset().top - 80 }, 300, function() {
