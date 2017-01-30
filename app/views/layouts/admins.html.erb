@@ -93,6 +93,11 @@
             <span class="glyphicon glyphicon-send"></span>&nbsp;Newsletter Queues
           <% end %>
         </li>
+        <li class="<%= class_for_content_indicator(:contacts) %>">
+          <%= link_to admins_contacts_path do %>
+            <span class="glyphicon glyphicon-envelope"></span>&nbsp;Contact List
+          <% end %>
+        </li>
         <li role="presentation" class="divider"></li>
         <li class="<%= class_for_content_indicator(:admins) %>">
           <%= link_to admins_admins_path do %>

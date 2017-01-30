@@ -33,5 +33,8 @@ Rails.application.routes.draw do
     resources :newsletter_queues
     resources :learning_modules
     resources :investment_tips
+    resources :contacts, :only => [:index, :show, :destroy] do
+      post 'set_subscribe_flag'
+    end
   end
 end
