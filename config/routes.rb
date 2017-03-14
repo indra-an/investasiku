@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'tips_investasi' => 'home#investment_tips', :as => :public_tips
   get 'belajar_investasi' => 'home#learning_module', :as => :public_module
   get 'berita/:slug' => 'home#news_view', :as => :public_news_view
-  get 'belajar_investasi/:slug' => 'home#investment_tips_view', :as => :public_tips_view
+  get 'tips_investasi/:slug' => 'home#investment_tips_view', :as => :public_tips_view
   get 'pencarian' => 'home#perform_search', :as => :public_perform_search
   get 'team' => 'home#team', :as => :public_team
   get 'terms' => 'home#terms', :as => :public_terms
