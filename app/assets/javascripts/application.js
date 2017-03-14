@@ -58,10 +58,19 @@ $(document).on("turbolinks:load", function() {
   $(".pagination.fixed-left a[href^='#'], .scroll-to-position").on('click', function(e) {
    e.preventDefault();
    var target = $(this).attr("href");
-   console.log(target);
    $("html, body").animate({ scrollTop: $(target).offset().top - 80 }, 300, function() {
      window.location.hash = target;
    });
+  });
+
+  $(".scroll-to-position-b").on('click', function(e) {
+    e.preventDefault();
+    var target = $(this).attr("href");
+    setTimeout(function() {
+      $("html, body").animate({ scrollTop: $(target).offset().top - 80 }, 300, function() {
+        window.location.hash = target;
+      });
+    }, 500);
   });
 
   $("#form-search-context #query").on("keypress", function(e) {
