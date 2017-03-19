@@ -255,3 +255,34 @@ iframe {
   max-width: 100% !important;
   height: auto !important;
 }
+
+@media (max-width: 560px) {
+    .panel-collapse .absolute-up {
+    right: 35%;
+}
+
+a.scroll-to-position {
+    padding: 7px;
+}
+
+.col-md-6.col-sm-12.col-xs-12.front-pad-right.border-right {
+    border-right: 0 solid transparent;
+    border-top: none !important;
+}
+
+.home-jumbotron {
+    border-bottom: none;
+}
+}
+
+@media (max-width: 768px) {
+    .glossary-left {
+    padding-left: 85px;
+    padding-right: 20px;
+}
+
+.fa.fa-bars.mobile {
+    color: #37bb7c;
+    font-size: 18px;
+}
+}

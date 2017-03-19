@@ -1630,3 +1630,26 @@ ul.nav.navbar-nav.menu-kolegial.navbar-right.mobile {
 .col-xs-12.front-body-headline div h2 {
 font-size: 20px;
 }
+
+.pagination.fixed-left {
+    width: 65px;
+}
+
+.glo-page {
+    padding: 13px 0;
+}
+
+
+a.scroll-to-position {
+    font-size: 14px;
+    background: #248e5a;
+    border-radius: 10px !important;
+    color: white;
+    padding: 10px;
+}
+
+.panel-collapse .absolute-up a i {
+    font-size: 16px;
+    border-radius: 50%;
+    margin-right: 7px;
+}
