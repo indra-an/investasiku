@@ -286,3 +286,31 @@ a.scroll-to-position {
     font-size: 18px;
 }
 }
+
+@media (min-width: 769px) {
+    .home-jumbotron {
+    background-position: center bottom;
+}
+}
+
+@media (max-width: 768px) {
+.tag-group .news-type {
+    margin-right: 5px;
+    margin-top: 7px !important;
+    display: inline-block;
+}
+
+.front-page div div h2, .front-page div div p,  {
+    padding: 0px 0px;
+}
+
+h2.investasiku-color.text-center {
+    padding: 0 25px;
+}
+}
+
+@media (max-width: 568px) {
+.col-xs-12.front-body-headline div {
+    margin-top: 105px;
+}
+}
