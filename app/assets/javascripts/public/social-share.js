@@ -197,7 +197,7 @@ function initailizeSocialShare() {
       var left = (screen_width / 2) - (popup_width / 2);
       var top = (screen_height / 2) - (popup_height / 2);
       var parameters = "toolbar=0,status=0,width=" + popup_width + ",height=" + popup_height + ",top=" + top + ",left=" + left;
-      return window.open(finish_url, '', parameters) && false;
+      return window.open(finish_url, '_blank', parameters) && false;
     }
   });
 }
