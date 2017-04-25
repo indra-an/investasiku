@@ -21,6 +21,7 @@ gem 'meta-tags'
 gem 'words_counted'
 gem 'closure-compiler'
 gem 'cloudinary'
+gem "recaptcha", require: 'recaptcha/rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri

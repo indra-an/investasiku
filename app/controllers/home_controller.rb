@@ -61,18 +61,20 @@ class HomeController < ApplicationController
   end
 
   def send_contact
-    full_name = params[:name]
-    email = params[:email]
-    message = params[:message].class.eql?(Array) ? params[:message].first : params[:message]
-    subscribe = params[:subscribe].to_i
-    contact = Contact.find_or_initialize_by(:email => email)
+    if verify_recaptcha
+      full_name = params[:name]
+      email = params[:email]
+      message = params[:message].class.eql?(Array) ? params[:message].first : params[:message]
+      subscribe = params[:subscribe].to_i
+      contact = Contact.find_or_initialize_by(:email => email)
 
-    if contact.new_record?
-      ApplicationMailer.contact_us(params).deliver_now
-      contact.name = full_name
-      contact.message = message
-      contact.is_subscribed = subscribe.eql?(1)
-      contact.save
+      if contact.new_record?
+        ApplicationMailer.contact_us(params).deliver_now
+        contact.name = full_name
+        contact.message = message
+        contact.is_subscribed = subscribe.eql?(1)
+        contact.save
+      end
     end
 
     redirect_to :back
