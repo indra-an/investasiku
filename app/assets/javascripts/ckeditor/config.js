@@ -28,7 +28,7 @@ CKEDITOR.editorConfig = function( config )
 
   config.allowedContent = true;
 
-  config.extraPlugins = 'youtube,ckeditor-gwf-plugin';
+  config.extraPlugins = 'youtube,ckeditor-gwf-plugin,tableresize';
 
   config.font_names = 'GoogleWebFonts;' + config.font_names;
 
