@@ -28,7 +28,9 @@ CKEDITOR.editorConfig = function( config )
 
   config.allowedContent = true;
 
-  config.extraPlugins = 'youtube';
+  config.extraPlugins = 'youtube,ckeditor-gwf-plugin';
+
+  config.font_names = 'GoogleWebFonts;' + config.font_names;
 
   // Toolbar groups configuration.
   config.toolbar = [
