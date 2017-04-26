@@ -24,6 +24,7 @@ class Admins::DashboardController < Admins::BaseController
     @preference.banner_ad_script = params[:banner_ad_script]
     @preference.sidebar_ad_script = params[:sidebar_ad_script]
     @preference.news_id = params[:news]
+    @preference.investment_tip_id = params[:investment_tip]
     @preference.module_step_1_id = params[:module_step_1]
     @preference.module_step_2_id = params[:module_step_2]
     @preference.module_step_3_id = params[:module_step_3]
@@ -56,7 +57,9 @@ class Admins::DashboardController < Admins::BaseController
     def set_preference_attributes
       @news = News.select(:id, :title).collect { |news| [news.title, news.id] }
       @learning_modules = LearningModule.select(:id, :title).collect { |mod| [mod.title, mod.id] }
+      @tips = InvestmentTip.select(:id, :title).collect { |tip| [tip.title, tip.id] }
       @news_selected = [@preference.news.title, @preference.news.id] rescue nil
+      @tip_selected = [@preference.investment_tip.title, @preference.investment_tip.id] rescue nil
       @module_selected = []
 
       5.times do |i|

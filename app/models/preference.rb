@@ -1,5 +1,6 @@
 class Preference < ApplicationRecord
   belongs_to :news
+  belongs_to :investment_tip
   belongs_to :module_step_1, :class_name => 'LearningModule'
   belongs_to :module_step_2, :class_name => 'LearningModule'
   belongs_to :module_step_3, :class_name => 'LearningModule'

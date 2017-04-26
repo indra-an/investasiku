@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161219174634) do
+ActiveRecord::Schema.define(version: 20170426025427) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -136,6 +136,8 @@ ActiveRecord::Schema.define(version: 20161219174634) do
     t.integer  "module_step_5_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.integer  "investment_tip_id"
+    t.index ["investment_tip_id"], name: "index_preferences_on_investment_tip_id", using: :btree
     t.index ["module_step_1_id"], name: "index_preferences_on_module_step_1_id", using: :btree
     t.index ["module_step_2_id"], name: "index_preferences_on_module_step_2_id", using: :btree
     t.index ["module_step_3_id"], name: "index_preferences_on_module_step_3_id", using: :btree
@@ -183,5 +185,6 @@ ActiveRecord::Schema.define(version: 20161219174634) do
 
   add_foreign_key "news_tags", "news"
   add_foreign_key "news_tags", "tags"
+  add_foreign_key "preferences", "investment_tips"
   add_foreign_key "preferences", "news"
 end

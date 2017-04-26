@@ -70,6 +70,13 @@
           </div>
 
           <div class="form-group">
+            <%= label_tag :investment_tip, 'Tips Investasi Home', :class => 'col-sm-3 control-label' %>
+            <div class="col-sm-9">
+              <%= select_tag :investment_tip, options_for_select(@tips, @tip_selected), :multiple => false, :class => 'chosen' %>
+            </div>
+          </div>
+
+          <div class="form-group">
             <%= label_tag :module_step_1, 'Learning Module Step 1', :class => 'col-sm-3 control-label' %>
             <div class="col-sm-9">
               <%= select_tag :module_step_1, options_for_select(@learning_modules, @module_selected_1), :multiple => false, :class => 'chosen' %>

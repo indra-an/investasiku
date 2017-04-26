@@ -26,12 +26,34 @@
   <div class="container-fluid">
     <div class="row">
       <div class="jumbotron-split">
-        <div class="col-md-6 col-sm-12 col-xs-12 front-pad-right border-right" style="background: url(<%= image_url('home-beritaku.jpg') %>); background-size:cover; background-position:center">
+        <!--<div class="col-md-6 col-sm-12 col-xs-12 front-pad-right border-right" style="background: url(<%= image_url('home-beritaku.jpg') %>); background-size:cover; background-position:center">
           <div class="headline-split vertical-middle">
             <div class="section-badge tema beritaku-sect">Beritaku</div>
             <div class="pull-left split-width">
               <h4 class="white">Berita terpenting untuk investasimu!</h4>
               <%= link_to 'Lebih Lanjut', public_news_path, :class => 'invest-color' %>
+            </div>
+          </div>
+        </div>-->
+
+        <!--<div class="col-md-6 col-sm-12 col-xs-12 front-pad-right">
+          <div class="headline-split vertical-middle">
+            <div class="section-badge tema beritaku-sect">Tips Investasi</div>
+            <div class="pull-left split-width">
+              <h4 class="white">Dapatkan tips untuk mengatur investasimu</h4>
+              <%= link_to 'Lebih Lanjut', public_tips_path, :class => 'invest-color' %>
+            </div>
+          </div>
+        </div>-->
+
+        <% image_url = @preference.news.image_url rescue image_url('home-beritaku.jpg') %>
+        <div class="col-md-6 col-sm-12 col-xs-12 front-pad-right border-right" style="background: url(<%= image_url %>); background-size:cover; background-position:center">
+          <div class="headline-split vertical-middle">
+            <div class="section-badge tema beritaku-sect">Beritaku</div>
+            <div class="pull-left split-width">
+              <h4 class="white"><%= truncate(@preference.news.title, :length => 64) rescue 'Berita terpenting untuk investasimu!' %></h4>
+              <% path = public_news_view_path(@preference.news.slug) rescue public_news_path %>
+              <%= link_to 'Lebih Lanjut', path, :class => 'invest-color' %>
             </div>
           </div>
         </div>
@@ -40,8 +62,9 @@
           <div class="headline-split vertical-middle">
             <div class="section-badge tema beritaku-sect">Tips Investasi</div>
             <div class="pull-left split-width">
-              <h4 class="white">Dapatkan tips untuk mengatur investasimu</h4>
-              <%= link_to 'Lebih Lanjut', public_tips_path, :class => 'invest-color' %>
+              <h4 class="white"><%= truncate(@preference.investment_tip.title, :length => 64) rescue 'Dapatkan tips untuk mengatur investasimu' %></h4>
+              <% path = public_tips_view_path(@preference.investment_tip.slug) rescue public_tips_path %>
+              <%= link_to 'Lebih Lanjut', path, :class => 'invest-color' %>
             </div>
           </div>
         </div>
