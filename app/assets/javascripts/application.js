@@ -6,7 +6,6 @@
 //= require public/classie
 //= require public/uisearch
 //= require public/social-share
-//= require turbolinks
 
 ahoy.trackAll();
 initailizeSocialShare();
@@ -23,12 +22,7 @@ if(window.should_enable_hash_inspector == undefined) {
   window.should_enable_hash_inspector = false;
 }
 
-$(document).on("turbolinks:click", function() {
-  window.should_disable_scroll_inspector = true;
-  window.should_enable_hash_inspector = false;
-});
-
-$(document).on("turbolinks:load", function() {
+$(document).on("ready", function() {
   new UISearch(document.getElementById("sb-search"));
 
   if(window.should_enable_hash_inspector && window.location.hash) {

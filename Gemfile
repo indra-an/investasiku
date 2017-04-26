@@ -5,7 +5,6 @@ gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
-gem 'turbolinks', '~> 5'
 gem 'figaro'
 gem 'pg'
 gem 'devise'

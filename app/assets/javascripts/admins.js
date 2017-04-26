@@ -6,10 +6,9 @@
 //= require chosen/chosen.jquery.min
 //= require public/bootstrap.min
 //= require ckeditor/init
-//= require turbolinks
 //= require_self
 
-$(document).on('turbolinks:load', function() {
+$(document).on('load', function() {
   // reattach callback
   $(".notification").fadeTo(3000, 500).slideUp(500, function() {
       $(".notification").slideUp(500);
