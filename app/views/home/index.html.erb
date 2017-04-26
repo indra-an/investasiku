@@ -1,6 +1,12 @@
 <%
   set_meta_tags description: 'Belajar investasi itu mudah loh!'
   set_meta_tags keywords: %w[investasiku investasi belajar]
+  set_meta_tags og: {
+    :url => request.original_url,
+    :title => 'Investasiku',
+    :description => 'Mapan finansial bisa dimulai sekarang',
+    :image => asset_url('home-top.png')
+  }
 %>
 
 <div class="front-page top-section">

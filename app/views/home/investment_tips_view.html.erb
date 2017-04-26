@@ -3,6 +3,12 @@
   set_meta_tags title: 'Investasiku', site: @tip.title
   set_meta_tags description: truncate(striped_tags, :length => 160)
   set_meta_tags keywords: generate_keywords_from(striped_tags)
+  set_meta_tags og: {
+    :url => request.original_url,
+    :title => @tip.title + ' | Investasiku',
+    :description => truncate(striped_tags, :length => 160),
+    :image => asset_url('home-top.png')
+  }
 %>
 
 <div class="news-details invesment-view">

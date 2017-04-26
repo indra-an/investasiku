@@ -2,8 +2,12 @@
   set_meta_tags title: 'Investasiku', site: 'Investment Tips'
   set_meta_tags description: 'Belajar investasi itu mudah loh!'
   set_meta_tags keywords: %w[investasiku investasi belajar tips investment tip]
-  set_meta_tags prev: "http://yoursite.com/url?page=1"
-  set_meta_tags next: "http://yoursite.com/url?page=3"
+    set_meta_tags og: {
+    :url => request.original_url,
+    :title => 'Investasiku',
+    :description => 'Mapan finansial bisa dimulai sekarang',
+    :image => asset_url('home-top.png')
+  }
 %>
 
 <div class="glossary-page">
