@@ -60,6 +60,15 @@ class HomeController < ApplicationController
   def contact_us
   end
 
+  def unsubscribe
+    contact = Contact.find(params[:id])
+    contact_token = Digest::MD5.hexdigest(contact.created_at.to_i.to_s)
+    token = params[:token]
+    raise ActiveRecord::RecordNotFound unless contact_token.eql?(token)
+    contact.update(:is_subscribed => false)
+    redirect_to root_url
+  end
+
   def send_contact
     if verify_recaptcha
       full_name = params[:name]

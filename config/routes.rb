@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'terms' => 'home#terms', :as => :public_terms
   get 'about' => 'home#about_us', :as => :public_about_us
   get 'contact' => 'home#contact_us', :as => :public_contact_us
+  get 'unsubscribe' => 'home#unsubscribe', :as => :public_unsubscribe
   post 'contact' => 'home#send_contact', :as => :public_send_contact
 
   devise_for :admins

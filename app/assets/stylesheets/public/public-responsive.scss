@@ -314,3 +314,15 @@ h2.investasiku-color.text-center {
     margin-top: 105px;
 }
 }
+
+@media (max-width: 768) {
+  .news-cover {
+    height: 53vh;
+    width: 100%;
+    margin-bottom: 50px;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: initial !important;
+    background-repeat: no-repeat !important;
+  }
+}

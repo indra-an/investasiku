@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto+Slab" rel="stylesheet">
+    <script src="https://use.fontawesome.com/9a601be8ce.js"></script>
+
+    <title>Investasiku Newsletter</title>
+  </head>
+
+  <body class="front-bg">
+    <section class="investasiku">
+      <a href=""><img src="images/logo_color.png"></a>
+      <p class="inline pull-right date-news"><b>Newsletter</b><br><%= @today %></p>
+    </section>
+
+    <section class="opening investasiku-bg-color">
+      <div>
+        <p class="white"><%= @content.html_safe %></p>
+      </div>
+    </section>
+
+    <div class="title">Glosarium Hari Ini</div>
+    <section class="news-content">
+      <div class="clear">
+        <% @glossaries.each do |glossary| %>
+          <div class="isi-content">
+            <div class="news-details pull-left">
+              <a href="" class="investasiku-color"><h5><%= glossary.description %></h5></a>
+              <p class="grey"><%= glossary.created_at.strftime("%d %B %Y") %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </section>
+
+    <div class="title">Beritaku Minggu Ini</div>
+    <section class="news-content">
+      <div class="clear">
+        <% @news.each do |news| %>
+          <div class="isi-content">
+            <div class="img-wrapper pull-left">
+              <%= link_to public_news_view_url(news.slug) do %>
+                <%= image_tag 'http://www.investasi-ku.com' + news.image_url %>
+              <% end %>
+            </div>
+            <div class="news-details pull-left">
+              <%= link_to public_news_view_url(news.slug), :class => 'investasiku-color' do %>
+                <h5><%= news.title %></h5>
+              <% end %>
+              <p class="grey"><%= news.created_at.strftime("%d %B %Y") %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </section>
+
+    <div class="title">Tips Investasi</div>
+    <section class="news-content">
+      <div class="clear">
+        <% @tips.each do |tip| %>
+          <div class="isi-content">
+            <div class="news-details pull-left">
+              <%= link_to public_tips_view_url(tip.slug), :class => 'investasiku-color' do %>
+                <h5><%= tip.title %></h5>
+              <% end %>
+              <p class="grey"><%= tip.created_at.strftime("%d %B %Y") %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </section>
+
+    <div style="text-align: center; margin-bottom: 35px;">
+      <p style="margin-bottom: 5px;">Tetaplah terhubung dengan kami untuk mendapatkan tips &amp; update terkini :</p>
+      <%= link_to @facebook_url, :style => 'font-size: 20px;' do %>
+        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+      <% end %>
+    </div>
+
+    <footer class="dark-bg">
+      <%= link_to 'About us', public_about_us_url %> <%= link_to 'Contact us', public_contact_us_url %> <%= link_to 'FAQ', root_url %>
+    </footer>
+
+    <p style="text-align: center;">
+      Email ini dikirimkan kepada Anda karena Anda ingin menerima informasi dan berita terbaru dari Investasiku.
+      Jika Anda tidak ingin menerima email ini lagi di waktu yang akan datang <%= link_to 'unsubscribe disini', public_unsubscribe_url(:id => @contact.id, :token => @contact_token), :style => 'text-decoration: underline;' %>.
+    </p>
+
+    <style type="text/css">
+      * {
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        font-family: 'Raleway', sans-serif;
+      }
+
+      h1,h2,h3,h4,h5,h6 {
+        font-family: 'Roboto Slab', serif;
+      }
+
+      .clear {
+        clear: both;
+      }
+
+      .clear:after {
+        content: ".";
+        display: block;
+        clear: both;
+        visibility: hidden;
+        line-height: 0;
+        height: 0;
+      }
+
+      .title {
+        padding: 5px 20px;
+        float: left;
+        background-color: #37bb7c;
+        border-radius: 30px;
+        margin-left: 30px;
+        color: white;
+        margin-bottom: 15px;
+        clear: both;
+      }
+
+      .investasiku-color {
+        color: #37bb7c
+      }
+
+      .investasiku-bg-color {
+        background: #37bb7c
+      }
+
+      .dark-bg {
+        background: #334543;
+        text-align: center;
+        padding: 15px
+      }
+
+      footer a {
+        color: white;
+        margin: 0 10px;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .pull-left {
+        float: left;
+      }
+
+      .pull-right {
+        float: right;
+      }
+
+      .inline {
+        display: inline-block;
+      }
+
+      .white {
+        color: white;
+      }
+
+      .opening {
+        margin-bottom: 25px;
+        padding: 15px 20px;
+      }
+
+      .investasiku {
+        text-align: left;
+        padding: 35px 12.5px;
+        border-bottom: 1px solid #e1e1e1;
+      }
+
+      .investasiku img {
+        height: 30px;
+      }
+
+      .img-wrapper {
+        overflow: hidden;
+        width: 100px;
+        height: 100px;
+      }
+
+      .img-wrapper img {
+        width: 180px;
+        margin-left: -15px;
+      }
+
+      .news-details {
+        margin-left: 10px;
+        width: 50%;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .news-details h5, .news-details p {
+        margin: 0;
+      }
+
+      p.grey {
+        color: #e1e1e1;
+        font-size: 12px;
+        margin-top: 10px;
+      }
+
+      .news-content {
+        padding: 10px;
+        margin-left: 30px;
+        margin-right: 30px;
+        display: block;
+        border-bottom: 1px solid #e1e1e1;
+        clear: both;
+        height: inherit;
+        margin-bottom: 30px;
+      }
+
+      .isi-content {
+        float: left;
+        margin-right: 25px;
+        width: 43%;
+        display: block;
+      }
+
+      .news-details {
+        max-width: 60%;
+      }
+
+      @media (max-width: 768px) {
+        .isi-content{
+          width: 100%;
+          margin-right: 10px;
+        }
+
+        .news-details {
+          max-width: 60%;
+        }
+      }
+
+      .investment-theme .news-details, .glossary .news-details {
+        margin-left: 10px;
+        width: 100%;
+      }
+
+      .news-content.unsubscribe-checkbox {
+        border-bottom: none;
+        height: auto;
+        text-align: center;
+        font-size: 12px;
+      }
+
+      .date-news {
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+    </style>
+  </body>
+</html>
