@@ -1653,3 +1653,31 @@ a.scroll-to-position {
     border-radius: 50%;
     margin-right: 7px;
 }
+
+.btn-modal {
+  margin-top: 100px;
+}
+
+.sub-close {
+  text-align: center !important;
+}
+
+.pull-left.split-width a {
+    padding: 7px 10px;
+    background: #13a89e;
+    border-radius: 5px;
+    color: white !important;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.pull-left.split-width a:hover {
+background: #108a82 !important;
+    color: white !important;
+    text-decoration: none;
+}
+
+/** share email hidden **/
+a.btnz.share.stumbleupon {
+    display: none;
+}
