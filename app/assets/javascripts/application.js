@@ -98,7 +98,7 @@ $(document).on("ready", function() {
     return false;
   });
 
-  $("#contact-accordion .collapse").collapse(window.last_contact_float_state);
+  $("#contact-accordion .collapse").collapse("hide");
 
   $("#contact-accordion a.contact-float").on("click", function() {
     $(this).parent().parent().find(".collapse").collapse("toggle");
