@@ -186,7 +186,7 @@
         var email = $("#email").val()
         var name = $("#name").val()
         var message = $("#message_").val()
-        if(validateEmail(email) && name!="" && message!="" )
+        if(validateEmail(email) && name!="")
          $('#subscribeModal').modal("show");
       })
 
@@ -203,7 +203,7 @@
             dataType: "text",
             success: function(resultData){
               $("#recaptcha-modal").hide()
-              $("#after-recaptcha").html("Terima kasih telah melakukan subscribe.")
+              $("#after-recaptcha").html("Terima kasih telah subscribe ke newsletter Investasiku. Follow kami juga di www.facebook.com/investasikucom untuk mendapatkan update terbaru")
               setTimeout(location.reload.bind(location), 3000); //reload after 3second
             }
       });

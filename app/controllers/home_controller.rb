@@ -14,7 +14,7 @@ class HomeController < ApplicationController
   def my_news
     @news = News.includes(:tags).by_tag(params[:tag])
                 .search(params[:query]).order(:created_at => :desc)
-                .page(params[:page]).per(10)
+                # .page(params[:page]).per(10)
   end
 
   def glossary
@@ -24,7 +24,7 @@ class HomeController < ApplicationController
 
   def investment_tips
     @tips = InvestmentTip.search(params[:query]).order(:created_at => :desc)
-                         .page(params[:page]).per(10)
+                         # .page(params[:page]).per(10)
   end
 
   def learning_module
@@ -78,12 +78,12 @@ class HomeController < ApplicationController
     contact = Contact.find_or_initialize_by(:email => email)
 
     if contact.new_record?
-      ApplicationMailer.contact_us(params).deliver_now
       contact.name = full_name
       contact.message = message
       contact.is_subscribed = subscribe.eql?(1)
       contact.save
     end
+    ApplicationMailer.contact_us(params).deliver_now
     # end
 
     redirect_to :back
