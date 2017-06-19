@@ -89,6 +89,14 @@ class HomeController < ApplicationController
     redirect_to :back
   end
 
+  def check_email
+    contact = Contact.find_by(email: params[:email]) rescue nil
+    msg = (contact.present?) ? "Email yang anda cantumkan sudah terdaftar" : nil
+    respond_to do |format|
+      format.json {render json: {status: 200,msg: msg}}
+    end
+  end
+
   def team
   end
 

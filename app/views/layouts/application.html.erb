@@ -56,6 +56,7 @@
                       <%= check_box_tag :subscribe %>&nbsp;Saya ingin subscribe newsletter Investasiku
                     </label>
                   </div>
+                  <div id="sudah-sub"></div>
                   <button type="button" class="btn btn-primary contact btn-modal">Kirim </button>
                 <% end %>
               </div>
@@ -190,6 +191,22 @@
          $('#subscribeModal').modal("show");
       })
 
+      $("#email").blur(function(){
+        $.ajax({
+            type: "GET",
+            url: "<%=public_check_email_path%>",
+            data: {email: $(this).val()},
+            dataType: "text",
+            success: function(resultData){
+              result = JSON.parse(resultData)
+              msg = result["msg"]
+              if(msg != ""){
+                $("#sudah-sub").addClass('sudah-sub').html(msg)
+              }
+            }
+        })
+      });
+
       $(function() {
         $('.g-recaptcha').attr("data-callback", "recaptcha");
       })
@@ -203,7 +220,7 @@
             dataType: "text",
             success: function(resultData){
               $("#recaptcha-modal").hide()
-              $("#after-recaptcha").html("Terima kasih telah subscribe ke newsletter Investasiku. Follow kami juga di www.facebook.com/investasikucom untuk mendapatkan update terbaru")
+              $("#after-recaptcha").html("Terima kasih telah subscribe ke newsletter Investasiku. Follow kami juga di <a href='www.facebook.com/investasikucom'>www.facebook.com/investasikucom</a> untuk mendapatkan update terbaru")
               setTimeout(location.reload.bind(location), 3000); //reload after 3second
             }
       });

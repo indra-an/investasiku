@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'about' => 'home#about_us', :as => :public_about_us
   get 'contact' => 'home#contact_us', :as => :public_contact_us
   get 'unsubscribe' => 'home#unsubscribe', :as => :public_unsubscribe
+  get 'check_email' => 'home#check_email', :as => :public_check_email
   post 'contact' => 'home#send_contact', :as => :public_send_contact
 
   devise_for :admins
