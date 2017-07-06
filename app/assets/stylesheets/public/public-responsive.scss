@@ -326,3 +326,21 @@ h2.investasiku-color.text-center {
     background-repeat: no-repeat !important;
   }
 }
+
+.floating-contact {
+    z-index: 1000;
+}
+
+@media (max-width: 500px) {
+div#recaptcha-modal {
+    margin-left: 0 !important;
+}
+
+.modal-dialog {
+    z-index: 10000;
+}
+
+.modal-content {
+    margin-top: 175px;
+}
+}
