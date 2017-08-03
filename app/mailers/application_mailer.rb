@@ -6,7 +6,7 @@ class ApplicationMailer < ActionMailer::Base
     @name = params[:name]
     @email = params[:email]
     @content = params[:message].class.eql?(Array) ? params[:message].first : params[:message]
-    mail(to: 'web.investasiku@gmail.com', subject: '[New Contact] ' + @name)
+    mail(to: Rails.application.secrets.admin_email, subject: '[New Contact] ' + @name)
   end
 
   def newsletter(contact, newsletter)
